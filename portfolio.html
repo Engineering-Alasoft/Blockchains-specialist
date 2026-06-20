@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Case studies — coins and tokens launched by BlockchainsSpecialist on KuCoin, Gate.io, CMC, and more.">
+<title>Case Studies — BlockchainsSpecialist</title>
+<link rel="icon" href="images/favicons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="images/favicons/site.webmanifest">
+<meta name="theme-color" content="#EF233C">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="loader"><div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div><div class="loader-bar"><div class="loader-fill"></div></div></div>
+<div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
+<nav class="navbar navbar--light scrolled" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo.svg" alt="Blockchains Specialist"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html" class="active">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="book.html" class="btn"><span>Book a Call</span></a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+  <a href="index.html" onclick="closeMenu()">Home</a><a href="about.html" onclick="closeMenu()">About</a><a href="services.html" onclick="closeMenu()">Services</a><a href="portfolio.html" onclick="closeMenu()">Case Studies</a><a href="pricing.html" onclick="closeMenu()">Pricing</a><a href="blog.html" onclick="closeMenu()">Blog</a><a href="contact.html" onclick="closeMenu()">Contact</a><a href="book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Portfolio</span></div>
+    <h1>Our Excellent <span style="color:var(--heading)">Portfolio</span></h1>
+    <p>Coins and tokens we've designed, deployed, and listed for clients worldwide.</p>
+  </div>
+</section>
+
+<section class="coin-portfolio" style="padding-top:60px;">
+  <div class="container">
+    <div class="portfolio-filter" data-aos="fade-up">
+      <button class="filter-btn active" onclick="filterPortfolio('all',this)">All</button>
+      <!-- <button class="filter-btn" onclick="filterPortfolio('coin',this)">Coins</button>
+      <button class="filter-btn" onclick="filterPortfolio('token',this)">Tokens</button>
+      <button class="filter-btn" onclick="filterPortfolio('listing',this)">Listings</button> -->
+    </div>
+
+    <div class="coin-portfolio-grid" id="portfolioGrid">
+
+      <article class="coin-item" data-cat="coin listing" data-aos="fade-up">
+        <div class="coin-item-img">
+          <img src="images/coin images/Tic.png" alt="Tourism Coin (TIC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>Tourism Coin<span>(TIC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="coin listing" data-aos="fade-up" data-aos-delay="50">
+        <div class="coin-item-img">
+          <img src="images/coin images/qtc.png" alt="Quick Transfer Coin (QTC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>Quick Transfer Coin<span>(QTC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="coin listing" data-aos="fade-up" data-aos-delay="100">
+        <div class="coin-item-img">
+          <img src="images/coin images/zenc.png" alt="ZENC Coin (ZENC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>ZENC Coin<span>(ZENC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="token listing" data-aos="fade-up">
+        <div class="coin-item-img">
+          <img src="images/coin images/fpc-coin.png" alt="Fall Protection (FPC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>Fall Protection<span>(FPC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="token listing" data-aos="fade-up" data-aos-delay="50">
+        <div class="coin-item-img">
+          <img src="images/coin images/GWSC.png" alt="GSWC Coin (GSWC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>GSWC Coin<span>(GSWC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="coin listing" data-aos="fade-up" data-aos-delay="100">
+        <div class="coin-item-img">
+          <img src="images/coin images/TDLC.png" alt="Davis Legacy (TDLC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>Davis Legacy<span>(TDLC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="token listing" data-aos="fade-up">
+        <div class="coin-item-img">
+          <img src="images/coin images/Rx.png" alt="RX Coin (RX)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>RX Coin<span>(RX)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="coin" data-aos="fade-up" data-aos-delay="50">
+        <div class="coin-item-img">
+          <img src="images/coin images/ctc.png" alt="Catchy Coin (CTC)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>Catchy Coin<span>(CTC)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+      <article class="coin-item" data-cat="coin listing" data-aos="fade-up" data-aos-delay="100">
+        <div class="coin-item-img">
+          <img src="images/coin images/WFDP.png" alt="World Federation (WFDP)" loading="lazy">
+        </div>
+        <div class="coin-item-footer">
+          <h4>World Federation<span>(WFDP)</span></h4>
+          <a href="book.html" class="coin-item-plus" title="Start a similar project">+</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center section-cta" style="padding-top:50px;">
+      <p style="margin-bottom:20px;color:var(--text);">Want a coin like these for your project?</p>
+      <a href="book.html" class="btn"><span>Book a Strategy Call</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/config.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

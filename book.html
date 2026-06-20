@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Book a free consultation with BlockchainsSpecialist — Web3 strategy, token development, and exchange listing calls.">
+<title>Book a Call — BlockchainsSpecialist</title>
+<link rel="icon" href="images/favicons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="images/favicons/site.webmanifest">
+<meta name="theme-color" content="#EF233C">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div><div class="loader-bar"><div class="loader-fill"></div></div></div>
+<div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
+
+<nav class="navbar navbar--light scrolled" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo.svg" alt="Blockchains Specialist"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Case Studies</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="book.html" class="btn active"><span>Book a Call</span></a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="portfolio.html" onclick="closeMenu()">Case Studies</a>
+  <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Book a Call</span></div>
+    <h1>Schedule Your <span style="color:var(--heading)">Consultation</span></h1>
+    <p>Pick a meeting type, choose a date and time (PKT), and our team will confirm within 24 hours.</p>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-wrap" id="bookingForm">
+      <div class="booking-steps">
+        <div class="booking-step-tab active" data-step="1">1. Meeting</div>
+        <div class="booking-step-tab" data-step="2">2. Date & Time</div>
+        <div class="booking-step-tab" data-step="3">3. Your Details</div>
+        <div class="booking-step-tab" data-step="4">4. Confirm</div>
+      </div>
+
+      <div class="booking-panel active" data-panel="1">
+        <h3 style="margin-bottom:20px;font-size:18px;">What would you like to discuss?</h3>
+        <div class="meeting-types" id="meetingTypes"></div>
+        <div class="booking-nav"><span></span><button type="button" class="btn" onclick="goStep(2)"><span>Next →</span></button></div>
+      </div>
+
+      <div class="booking-panel" data-panel="2">
+        <div class="calendar-header">
+          <button type="button" class="calendar-nav-btn" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+          <h3 id="calendarTitle"></h3>
+          <button type="button" class="calendar-nav-btn" onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <h4 style="margin-top:28px;font-size:14px;margin-bottom:8px;">Available Times (PKT)</h4>
+        <div class="time-slots" id="timeSlots"></div>
+        <div class="booking-nav">
+          <button type="button" class="btn" onclick="goStep(1)" style="background:transparent;color:var(--primary);box-shadow:none;border-color:var(--primary);"><span>← Back</span></button>
+          <button type="button" class="btn" onclick="goStep(3)"><span>Next →</span></button>
+        </div>
+      </div>
+
+      <div class="booking-panel" data-panel="3">
+        <div class="form-row">
+          <div class="form-group"><label for="bname">Full Name</label><input type="text" id="bname" placeholder="Your name"></div>
+          <div class="form-group"><label for="bemail">Email</label><input type="email" id="bemail" placeholder="you@company.com"></div>
+        </div>
+        <div class="form-group"><label for="bphone">Phone / WhatsApp</label><input type="tel" id="bphone" placeholder="+92 300 0000000"></div>
+        <div class="form-group"><label for="bnotes">Project Notes (optional)</label><textarea id="bnotes" placeholder="Brief description of your project or questions..."></textarea></div>
+        <div class="booking-nav">
+          <button type="button" class="btn" onclick="goStep(2)" style="background:transparent;color:var(--primary);box-shadow:none;border-color:var(--primary);"><span>← Back</span></button>
+          <button type="button" class="btn" onclick="goStep(4)"><span>Review →</span></button>
+        </div>
+      </div>
+
+      <div class="booking-panel" data-panel="4">
+        <div class="booking-summary" id="bookingSummary"></div>
+        <p style="font-size:13px;color:var(--text);margin-bottom:24px;line-height:1.7;">By confirming, we'll send your booking to our team via email and WhatsApp. You'll receive a confirmation within 24 hours.</p>
+        <div class="booking-nav">
+          <button type="button" class="btn" onclick="goStep(3)" style="background:transparent;color:var(--primary);box-shadow:none;border-color:var(--primary);"><span>← Back</span></button>
+          <button type="button" class="btn" onclick="confirmBooking()"><span>Confirm Booking</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-success" id="bookingSuccess">
+      <i class="fas fa-check-circle"></i>
+      <h3>Booking Request Sent!</h3>
+      <p id="successDetails"></p>
+      <p style="font-size:13px;color:var(--text);">Our team will confirm your appointment within 24 hours.</p>
+      <a href="#" id="whatsappConfirm" class="btn" target="_blank" rel="noopener"><span>Confirm on WhatsApp</span></a>
+      <a href="#" id="emailConfirm" class="btn" style="margin-left:10px;background:transparent;color:var(--primary);box-shadow:none;border-color:var(--primary);"><span>Send via Email</span></a>
+      <div style="margin-top:14px;"><a href="index.html" style="font-size:13px;font-weight:600;">← Back to Home</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/config.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

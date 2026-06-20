@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blockchain services — smart contracts, token development, exchange listings, NFT platforms, dApps. BlockchainsSpecialist.">
+<title>Services — BlockchainsSpecialist</title>
+<link rel="icon" href="images/favicons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="images/favicons/site.webmanifest">
+<meta name="theme-color" content="#EF233C">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="loader"><div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div><div class="loader-bar"><div class="loader-fill"></div></div></div>
+<div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
+<nav class="navbar navbar--light scrolled" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo.svg" alt="Blockchains Specialist"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="portfolio.html">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="book.html" class="btn"><span>Book a Call</span></a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+  <a href="index.html" onclick="closeMenu()">Home</a><a href="about.html" onclick="closeMenu()">About</a><a href="services.html" onclick="closeMenu()">Services</a><a href="portfolio.html" onclick="closeMenu()">Case Studies</a><a href="pricing.html" onclick="closeMenu()">Pricing</a><a href="blog.html" onclick="closeMenu()">Blog</a><a href="contact.html" onclick="closeMenu()">Contact</a><a href="book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
+    <h1>Our <span style="color:var(--heading)">Services</span></h1>
+    <p>End-to-end blockchain solutions for founders, startups, and enterprises.</p>
+  </div>
+</section>
+
+<section class="services" style="padding-top:70px;">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><div class="service-number">01</div><div class="service-icon"><i class="fas fa-file-contract"></i></div><h3>Smart Contract Development</h3><p>Audited, gas-optimized Solidity & Rust contracts on Ethereum, BSC, Solana. ERC-20/721/1155 and custom logic.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80"><div class="service-number">02</div><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Token Development</h3><p>ERC-20, BEP-20, TRC-20 tokens — deployment, logo, metadata, and IDO/ICO readiness.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160"><div class="service-number">03</div><div class="service-icon"><i class="fas fa-image"></i></div><h3>NFT Marketplace & Minting</h3><p>Custom NFT platforms with minting, royalties, reveal logic, and OpenSea integration.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up"><div class="service-number">04</div><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h3>Web & dApp Development</h3><p>Project websites, ICO landing pages, wallet integrations, and MetaMask-ready dApps.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80"><div class="service-number">05</div><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3>CMC & CoinGecko Listing</h3><p>Get listed on CoinMarketCap and CoinGecko — the critical step for credibility and trust.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160"><div class="service-number">06</div><div class="service-icon"><i class="fas fa-vote-yea"></i></div><h3>DAO & Governance</h3><p>On-chain voting, treasury management, and proposal systems on proven frameworks.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up"><div class="service-number">07</div><div class="service-icon"><i class="fas fa-exchange-alt"></i></div><h3>CEX Exchange Listing</h3><p>KuCoin, Gate.io, Coinsbit, Dex-Trade — we manage the full listing process for you.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80"><div class="service-number">08</div><div class="service-icon"><i class="fas fa-bullhorn"></i></div><h3>ICO Consultancy</h3><p>Tokenomics design, whitepaper, marketing strategy, and fundraising support.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160"><div class="service-number">09</div><div class="service-icon"><i class="fas fa-cube"></i></div><h3>Coin Development</h3><p>Custom Layer-1 coins with mainnet deployment, wallets, and exchange integration.</p><a href="book.html" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+    <div class="text-center section-cta" style="padding-bottom:60px;"><a href="book.html" class="btn"><span>Book a Free Consultation</span></a> <a href="pricing.html" class="btn" style="margin-left:12px;background:transparent;color:var(--primary);box-shadow:none;"><span>View Pricing</span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/config.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="BlockchainsSpecialist Pakistan's premier Web3 agency. Token development, exchange listings, dApps. Book a free consultation today.">
+  <title>BlockchainsSpecialist Web3 & Blockchain Company</title>
+  <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <meta name="theme-color" content="#EF233C">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div>
+    <div class="loader-bar">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+
+  <div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
+
+  <nav class="navbar navbar--light scrolled" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.svg" alt="Blockchains Specialist">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Case Studies</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="btn"><span>Book a Call</span></a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="portfolio.html" onclick="closeMenu()">Case Studies</a>
+    <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+    <a href="blog.html" onclick="closeMenu()">Blog</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+  </div>
+
+  <section class="hero" id="home">
+    <canvas id="particles"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag"><i class="fas fa-building"></i> Leading Web3 Company</div>
+        <h1 class="hero-headline">
+          Your Partner for
+          <span class="accent">Blockchain</span>
+          <span class="line2" id="typed-container">Success<span class="typed-cursor">|</span></span>
+        </h1>
+        <p class="hero-sub">We help founders and businesses launch coins, tokens, dApps, and exchange listings from
+          strategy to mainnet. Talk to our team and get a clear roadmap.</p>
+        <div class="hero-cta">
+          <a href="book.html" class="btn"><span>Book Free Consultation</span></a>
+          <a href="services.html" class="btn btn-outline"><span>Our Services</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num" data-target="75">0<span>+</span></div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="40">0<span>+</span></div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="10">0<span>+</span></div>
+            <div class="stat-label">Exchanges</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="8">0<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="chain-box">
+          <div class="chain-ring ring1">
+            <div class="orbit-dot dot-1"><i class="fab fa-ethereum"></i></div>
+            <div class="orbit-dot dot-2"><i class="fas fa-coins"></i></div>
+            <div class="orbit-dot dot-3"><i class="fas fa-cube"></i></div>
+            <div class="orbit-dot dot-4"><i class="fas fa-lock"></i></div>
+          </div>
+          <div class="chain-ring ring2"></div>
+          <div class="chain-center">
+            <div class="chain-icon"><i class="fas fa-network-wired"></i></div>
+            <div class="chain-label">WEB3 HUB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="client-strip">
+    <div class="container">
+      <p>Trusted by founders listed on</p>
+      <div class="exchange-tags">
+        <span class="exchange-tag">KuCoin</span>
+        <span class="exchange-tag">Gate.io</span>
+        <span class="exchange-tag">CoinMarketCap</span>
+        <span class="exchange-tag">CoinGecko</span>
+        <span class="exchange-tag">Coinsbit</span>
+        <span class="exchange-tag">Dex-Trade</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-services-preview">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">What We Offer</div>
+        <h2>Full-Service <span>Blockchain</span> Company</h2>
+        <p>Everything you need to launch and grow a crypto project under one roof.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <div class="service-number">01</div>
+          <div class="service-icon"><i class="fas fa-coins"></i></div>
+          <h3>Coin & Token Development</h3>
+          <p>ERC-20, BEP-20, TRC-20 and custom tokens audited, deployed, and ready for launch.</p>
+          <a href="services.html" class="service-link">View services <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="service-number">02</div>
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Exchange Listings</h3>
+          <p>CEX listings on KuCoin, Gate.io, and more plus CMC and CoinGecko tracker setup.</p>
+          <a href="services.html" class="service-link">View services <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="service-number">03</div>
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Websites & dApps</h3>
+          <p>ICO landing pages, project websites, and MetaMask-ready dApps built to convert clients.</p>
+          <a href="services.html" class="service-link">View services <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="text-center section-cta"><a href="book.html" class="btn"><span>Schedule a Discovery Call</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="about-preview">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <div class="section-header" style="text-align:left;" data-aos="fade-right">
+            <div class="eyebrow">Why Clients Choose Us</div>
+            <h2 style="color:var(--white)">We Build <span>Successful</span> Projects</h2>
+            <p style="color:rgba(255,255,255,.7);text-align:left;">8+ years delivering coins, tokens, and listings. We
+              stay with you from the first call to exchange launch.</p>
+          </div>
+          <ul class="why-list" data-aos="fade-right" data-aos-delay="100">
+            <li class="why-item">
+              <div class="why-item-icon"><i class="fas fa-check-circle"></i></div>
+              <div>
+                <h4>Proven Track Record</h4>
+                <p>75+ projects deployed across 10+ exchanges worldwide.</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-item-icon"><i class="fas fa-rocket"></i></div>
+              <div>
+                <h4>Exchange Connections</h4>
+                <p>Direct relationships with top CEXs for faster, better listing rates.</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-item-icon"><i class="fas fa-headset"></i></div>
+              <div>
+                <h4>Dedicated Support</h4>
+                <p>Consultation, development, and post-launch support in one team.</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:28px;"><a href="about.html" class="btn btn-outline"><span>About Our Company</span></a>
+          </div>
+        </div>
+        <div class="why-visual" data-aos="fade-left">
+          <div class="tech-stack">
+            <div class="tech-item"><i class="fab fa-ethereum"></i><span>Ethereum</span></div>
+            <div class="tech-item"><i class="fas fa-bolt"></i><span>Solana</span></div>
+            <div class="tech-item"><i class="fas fa-code"></i><span>Solidity</span></div>
+            <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tech-item"><i class="fas fa-wallet"></i><span>Hardhat</span></div>
+            <div class="tech-item"><i class="fas fa-server"></i><span>IPFS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="coin-portfolio">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Our Portfolio</div>
+        <h2>Coins We've <span>Built</span></h2>
+        <p>Real coin designs deployed for clients — from token creation to exchange listing.</p>
+      </div>
+      <div class="coin-portfolio-grid">
+        <article class="coin-item" data-aos="fade-up">
+          <div class="coin-item-img"><img src="images/coin images/Tic.png" alt="Tourism Coin (TIC)" loading="lazy">
+          </div>
+          <div class="coin-item-footer">
+            <h4>Tourism Coin<span>(TIC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="50">
+          <div class="coin-item-img"><img src="images/coin images/qtc.png" alt="Quick Transfer Coin (QTC)"
+              loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>Quick Transfer Coin<span>(QTC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="coin-item-img"><img src="images/coin images/zenc.png" alt="ZENC Coin (ZENC)" loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>ZENC Coin<span>(ZENC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="coin-item-img"><img src="images/coin images/fpc-coin.png" alt="Fall Protection (FPC)"
+              loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>Fall Protection<span>(FPC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="coin-item-img"><img src="images/coin images/GWSC.png" alt="GSWC Coin (GSWC)" loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>GSWC Coin<span>(GSWC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="coin-item-img"><img src="images/coin images/TDLC.png" alt="Davis Legacy (TDLC)" loading="lazy">
+          </div>
+          <div class="coin-item-footer">
+            <h4>Davis Legacy<span>(TDLC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="coin-item-img"><img src="images/coin images/Rx.png" alt="RX Coin (RX)" loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>RX Coin<span>(RX)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="350">
+          <div class="coin-item-img"><img src="images/coin images/ctc.png" alt="Catchy Coin (CTC)" loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>Catchy Coin<span>(CTC)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+        <article class="coin-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="coin-item-img"><img src="images/coin images/WFDP.png" alt="World Federation (WFDP)"
+              loading="lazy"></div>
+          <div class="coin-item-footer">
+            <h4>World Federation<span>(WFDP)</span></h4><a href="portfolio.html" class="coin-item-plus">+</a>
+          </div>
+        </article>
+      </div>
+      <div class="text-center section-cta"><a href="portfolio.html" class="btn"><span>View Full Portfolio</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Client Stories</div>
+        <h2 style="color:var(--white)">Trusted by <span>Founders</span></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card" data-aos="fade-up">
+          <div class="testi-stars">★★★★★</div>
+          <p>"BlockchainsSpecialist listed our coin on KuCoin at a price no other agency could match. Professional from
+            start to finish."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AK</div>
+            <div>
+              <div class="testi-name">Ahmed Khan</div>
+              <div class="testi-role">Founder, LiquidSwap</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p>"From coin development to CMC listing the team handled everything. Our project got approved within 2
+            weeks."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sara Rizvi</div>
+              <div class="testi-role">CEO, CryptoRelic</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Zero blockchain knowledge when I started. They guided me through tokenomics, deployment, and listing step
+            by step."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MF</div>
+            <div>
+              <div class="testi-name">Marco Ferreira</div>
+              <div class="testi-role">CTO, MetaArena</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="process">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">How It Works</div>
+        <h2>Simple <span>4-Step</span> Process</h2>
+        <p>Book a call, get a roadmap, we build, you launch.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step" data-aos="fade-up">
+          <div class="step-num">01</div>
+          <h4>Book a Call</h4>
+          <p>Schedule a free consultation and tell us your vision.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-num">02</div>
+          <h4>Get a Roadmap</h4>
+          <p>We deliver an honest plan with timeline and pricing.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-num">03</div>
+          <h4>We Build</h4>
+          <p>Development, audit, and testing until it's ready.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-num">04</div>
+          <h4>You Launch</h4>
+          <p>Mainnet, listings, CMC/CG we stay with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <h2 data-aos="fade-up">Ready to Grow Your Blockchain Business?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Book a free 30-minute call with our team. No obligation just clear
+        advice.</p>
+      <div class="home-cta-row" data-aos="fade-up" data-aos-delay="200">
+        <a href="book.html" class="btn"><span>Book a Call</span></a>
+        <a href="contact.html" class="btn btn-outline"><span>Send a Message</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>
