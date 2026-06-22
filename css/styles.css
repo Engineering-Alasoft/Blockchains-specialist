@@ -586,7 +586,7 @@
       margin-top: 4px;
     }
 
-    /* Hero visual — 2 rings, GPU-composited */
+    /* Hero visual — Web3 hub + orbit icons */
     .hero-visual {
       display: flex;
       align-items: center;
@@ -597,26 +597,26 @@
       position: relative;
       width: 400px;
       height: 400px;
-      will-change: transform;
     }
 
-    .chain-ring {
+    .chain-box::before,
+    .chain-box::after {
+      content: '';
       position: absolute;
       border-radius: 50%;
-      border: 1px solid;
-      will-change: transform;
+      border: 1px solid rgba(255, 255, 255, .18);
+      pointer-events: none;
     }
 
-    .ring1 {
+    .chain-box::before {
       inset: 0;
-      border-color: rgba(255, 255, 255, .22);
-      animation: spinRing 20s linear infinite;
+      animation: spinRing 22s linear infinite;
     }
 
-    .ring2 {
+    .chain-box::after {
       inset: 35px;
-      border-color: rgba(255, 255, 255, .14);
-      animation: spinRing 14s linear infinite reverse;
+      border-color: rgba(255, 255, 255, .1);
+      animation: spinRing 15s linear infinite reverse;
     }
 
     @keyframes spinRing {
@@ -627,7 +627,11 @@
 
     .chain-center {
       position: absolute;
-      inset: 80px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 180px;
       background: rgba(255, 255, 255, .09);
       border: 2px solid rgba(255, 255, 255, .35);
       border-radius: 50%;
@@ -635,57 +639,88 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      z-index: 1;
     }
 
     .chain-icon {
       font-size: 46px;
       color: var(--white);
-      margin-bottom: 8px;
+      line-height: 1;
     }
 
-    .chain-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, .55);
-    }
-
-    .orbit-dot {
+    .orbit-icon {
       position: absolute;
-      width: 34px;
-      height: 34px;
-      background: var(--primary);
-      border: 2px solid rgba(255, 255, 255, .55);
+      width: 46px;
+      height: 46px;
+      background: rgba(255, 255, 255, .1);
+      border: 2px solid rgba(255, 255, 255, .42);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 18px;
       color: var(--white);
+      z-index: 2;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+      animation: orbitPulse 3s ease-in-out infinite;
     }
 
-    .dot-1 {
-      top: -17px;
+    .orbit-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .orbit-icon-1 {
+      top: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
+      animation-delay: 0s;
     }
 
-    .dot-2 {
-      bottom: -17px;
+    .orbit-icon-2 {
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      animation-delay: .4s;
+    }
+
+    .orbit-icon-3 {
+      bottom: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, 50%);
+      animation-delay: .8s;
     }
 
-    .dot-3 {
-      left: -17px;
+    .orbit-icon-4 {
       top: 50%;
-      transform: translateY(-50%);
+      left: 0;
+      transform: translate(-50%, -50%);
+      animation-delay: 1.2s;
     }
 
-    .dot-4 {
-      right: -17px;
-      top: 50%;
-      transform: translateY(-50%);
+    .orbit-icon-5 {
+      bottom: 14%;
+      left: 12%;
+      animation-delay: 1.6s;
+    }
+
+    .orbit-icon-6 {
+      top: 14%;
+      right: 12%;
+      animation-delay: 2s;
+    }
+
+    @keyframes orbitPulse {
+      0%,
+      100% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+      }
+
+      50% {
+        box-shadow: 0 10px 26px rgba(255, 255, 255, .22);
+      }
     }
 
     @media(max-width:900px) {
@@ -1917,5 +1952,5 @@
     section {
       position: relative;
     }
-  
+
     
