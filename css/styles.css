@@ -100,6 +100,8 @@
       align-items: center;
       justify-content: center;
       transition: opacity .5s ease, visibility .5s ease;
+      overflow: hidden;
+      padding: 16px;
     }
 
     #loader.hidden {
@@ -109,11 +111,16 @@
     }
 
     .loader-logo {
-      font-size: 28px;
+      font-size: clamp(12px, 3vw, 28px);
       font-weight: 700;
-      letter-spacing: 4px;
+      letter-spacing: clamp(1px, 1.2vw, 4px);
       color: var(--white);
       margin-bottom: 28px;
+      text-align: center;
+      max-width: min(92vw, 520px);
+      padding: 0 16px;
+      line-height: 1.35;
+      word-break: break-word;
     }
 
     .loader-logo span {
@@ -121,7 +128,7 @@
     }
 
     .loader-bar {
-      width: 180px;
+      width: min(180px, 70vw);
       height: 3px;
       background: rgba(255, 255, 255, .25);
       overflow: hidden;
@@ -1911,3 +1918,4 @@
       position: relative;
     }
   
+    
