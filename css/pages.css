@@ -438,6 +438,7 @@
 .booking-success p { margin-bottom: 20px; line-height: 1.7; }
 
 .contact-light { padding: 90px 0; background: var(--bg-light); }
+.contact-light .contact-grid > * { min-width: 0; }
 .contact-light .contact-form { box-shadow: var(--shadow-card); }
 .contact-light .contact-info-box {
   background: #fff;
@@ -450,11 +451,28 @@
   margin-bottom: 14px;
   color: var(--heading);
 }
+.contact-light .info-item > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
 .contact-light .info-item h4 { color: var(--text); }
-.contact-light .info-item p { color: var(--heading); }
+.contact-light .info-item p {
+  color: var(--heading);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.contact-light .info-item p a {
+  color: var(--heading);
+}
 .contact-light .info-icon {
   background: rgba(239,35,60,.08);
   color: var(--primary);
+}
+.contact-light .form-success {
+  background: #fff;
+  padding: 40px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
 }
 
 .home-services-preview { padding: 90px 0; }
@@ -478,6 +496,9 @@
   .meeting-types { grid-template-columns: 1fr; }
   .time-slots { grid-template-columns: repeat(2, 1fr); }
   .booking-step-tab { font-size: 10px; padding: 12px 6px; }
+
+  .contact-light { padding: 70px 0; }
+  .contact-light .contact-grid { gap: 32px; }
 }
 
 @media (max-width: 600px) {
@@ -499,7 +520,7 @@
   }
   .pricing-card.featured {
     padding: 36px 24px;
-    order: -1;
+    /* order: -1; */
   }
   .pricing-price { font-size: 40px; }
   .consultation-card .pricing-price { font-size: 36px; }
@@ -512,6 +533,26 @@
   .booking-panel { padding: 24px 18px; }
   .booking-steps { flex-wrap: wrap; }
   .booking-step-tab { flex: 1 1 33%; min-width: 0; }
+
+  .contact-light { padding: 56px 0; }
+  .contact-light .contact-info-box,
+  .contact-light .contact-form,
+  .contact-light .form-success {
+    padding: 28px 20px;
+  }
+  .contact-light .contact-info-box .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .contact-light .contact-info-box h3 {
+    font-size: 20px;
+  }
+  .contact-light .form-group input,
+  .contact-light .form-group select,
+  .contact-light .form-group textarea {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 380px) {
