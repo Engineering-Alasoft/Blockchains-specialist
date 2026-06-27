@@ -5,7 +5,7 @@ const SITE = {
   whatsapp: '923322449159',
   whatsappDisplay: '+92 332-244915-9',
   telegram: '@blockchainsspecialist',
-  timezone: 'Asia/Karachi',
+  timezone: 'UTC',
   booking: {
     daysAhead: 30,
     slotMinutes: 30,

@@ -713,6 +713,7 @@
     }
 
     @keyframes orbitPulse {
+
       0%,
       100% {
         box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
@@ -1317,7 +1318,7 @@
 
     .testi-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
 
@@ -1332,6 +1333,14 @@
     .testi-card:hover {
       background: rgba(255, 255, 255, .18);
       transform: translateY(-4px);
+    }
+
+    .testi-headline {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 10px;
     }
 
     .testi-stars {
@@ -1953,4 +1962,231 @@
       position: relative;
     }
 
-    
+
+
+
+    /* SECTION 24 June*/
+    /********************************/
+    /* TECHNOLOGY & SECURITY TIMELINE */
+    /********************************/
+
+    .tech-process {
+      position: relative;
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .tech-process .section-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .tech-process .section-title span {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .tech-process .section-title h2 {
+      color: var(--heading);
+      font-size: 48px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* ========================= */
+    /* Timeline */
+    /* ========================= */
+
+    .process-timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .process-timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--primary);
+      transform: translateX(-50%);
+    }
+
+    .process-item {
+      position: relative;
+      width: 50%;
+      margin-bottom: 70px;
+    }
+
+    .process-item.left {
+      padding-right: 70px;
+    }
+
+    .process-item.right {
+      margin-left: 50%;
+      padding-left: 70px;
+    }
+
+    /* ========================= */
+    /* Card */
+    /* ========================= */
+
+    .process-content {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 15px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      transition: all .3s ease;
+      text-align: left;
+    }
+
+    .process-content:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(var(--primary-rgb), 0.12);
+    }
+
+    /* Number */
+
+    .number {
+      display: block;
+      font-size: 54px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    /* Heading */
+
+    .process-content h3 {
+      color: var(--heading);
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    /* ========================= */
+    /* List */
+    /* ========================= */
+
+    .process-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .process-content ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .process-content ul li::before {
+      content: "";
+      width: 8px;
+      min-width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 12px;
+    }
+
+    /* ========================= */
+    /* Timeline Circle */
+    /* ========================= */
+
+    .process-dot {
+      position: absolute;
+      top: 55px;
+      width: 24px;
+      height: 24px;
+      background: var(--white);
+      border: 4px solid var(--primary);
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .process-item.left .process-dot {
+      right: -12px;
+    }
+
+    .process-item.right .process-dot {
+      left: -12px;
+    }
+
+    /* ========================= */
+    /* Connector Line */
+    /* ========================= */
+
+    .process-item.left::after {
+      content: "";
+      position: absolute;
+      top: 66px;
+      right: 12px;
+      width: 58px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .process-item.right::after {
+      content: "";
+      position: absolute;
+      top: 66px;
+      left: 12px;
+      width: 58px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    /* ========================= */
+    /* Mobile */
+    /* ========================= */
+
+    @media (max-width: 991px) {
+
+      .process-timeline::before {
+        left: 20px;
+      }
+
+      .process-item,
+      .process-item.left,
+      .process-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 60px;
+        padding-right: 0;
+      }
+
+      .process-item.left .process-dot,
+      .process-item.right .process-dot {
+        left: 8px;
+        right: auto;
+      }
+
+      .process-item.left::after,
+      .process-item.right::after {
+        left: 20px;
+        width: 30px;
+      }
+
+      .tech-process .section-title h2 {
+        font-size: 36px;
+      }
+
+      .number {
+        font-size: 42px;
+      }
+
+      .process-content h3 {
+        font-size: 24px;
+      }
+    }

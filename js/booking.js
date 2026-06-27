@@ -98,7 +98,7 @@ function renderTimeSlots() {
   const el = document.getElementById('timeSlots');
   if (!el) return;
   if (!booking.selectedDate) {
-    el.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#797979;font-size:14px;">Select a date to see available times (PKT).</p>';
+    el.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#797979;font-size:14px;">Select a date to see available times in UTC.</p>';
     return;
   }
 
@@ -120,9 +120,7 @@ function renderTimeSlots() {
 }
 
 function formatTime(h, m) {
-  const ampm = h >= 12 ? 'PM' : 'AM';
-  const hr = h > 12 ? h - 12 : (h === 0 ? 12 : h);
-  return hr + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+  return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ' UTC';
 }
 
 function selectTime(label, h, m) {
@@ -158,7 +156,7 @@ function updateSummary() {
   el.innerHTML = `
     <p><strong>Meeting:</strong> ${booking.meetingLabel}</p>
     <p><strong>Date:</strong> ${dateStr}</p>
-    <p><strong>Time:</strong> ${booking.selectedTime} (PKT)</p>
+    <p><strong>Time:</strong> ${booking.selectedTime}</p>
   `;
 }
 
@@ -182,7 +180,7 @@ function confirmBooking() {
     '',
     'Meeting: ' + booking.meetingLabel,
     'Date: ' + dateStr,
-    'Time: ' + booking.selectedTime + ' (PKT)',
+    'Time: ' + booking.selectedTime,
     '',
     'Name: ' + name,
     'Email: ' + email,
@@ -193,7 +191,7 @@ function confirmBooking() {
   document.querySelector('.booking-wrap').style.display = 'none';
   const success = document.getElementById('bookingSuccess');
   success.style.display = 'block';
-  document.getElementById('successDetails').textContent = booking.meetingLabel + ' on ' + dateStr + ' at ' + booking.selectedTime + ' PKT';
+  document.getElementById('successDetails').textContent = booking.meetingLabel + ' on ' + dateStr + ' at ' + booking.selectedTime;
 
   const wa = 'https://wa.me/' + SITE.whatsapp + '?text=' + encodeURIComponent(msg);
   document.getElementById('whatsappConfirm').href = wa;

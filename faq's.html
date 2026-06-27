@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Answers to common questions about token development, exchange listings, CoinMarketCap, CoinGecko, smart contract audits, and blockchain launch strategy.">
+  <title>FAQ — BlockchainsSpecialist</title>
+  <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <meta name="theme-color" content="#EF233C">
+  <meta name="robots" content="index, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is token development?", "acceptedAnswer": { "@type": "Answer", "text": "Token development is the process of creating a custom cryptocurrency token on an existing blockchain network such as Ethereum, BSC, or Solana." } },
+      { "@type": "Question", "name": "How much does token development cost?", "acceptedAnswer": { "@type": "Answer", "text": "Token development typically ranges from $3,000 to $50,000+ depending on complexity, features, audits, and timeline." } },
+      { "@type": "Question", "name": "What's the difference between ERC-20 and BEP-20 tokens?", "acceptedAnswer": { "@type": "Answer", "text": "ERC-20 tokens run on Ethereum while BEP-20 tokens run on Binance Smart Chain, with different fees, speed, and exchange support." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div>
+    <div class="loader-bar">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar--light scrolled" id="navbar">
+    <a href="index.html" class="nav-logo"><img src="images/logo.svg" alt="Blockchains Specialist"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="btn"><span>Book a Call</span></a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+    <a href="blog.html" onclick="closeMenu()">Blog</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>FAQ</span></div>
+      <h1>Frequently Asked <span style="color:var(--heading)">Questions</span></h1>
+      <p>Clear answers about token development, exchange listings, audits, and launching your blockchain project.</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <p class="faq-intro">Everything you need to know before launching a token or applying for exchange and tracker listings. Can't find your answer? <a href="contact.html" style="color:var(--primary);font-weight:600;">Contact our team</a> or <a href="book.html" style="color:var(--primary);font-weight:600;">book a free call</a>.</p>
+
+      <div class="faq-list">
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What is token development?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Token development is the process of creating a custom cryptocurrency token on an existing blockchain network. Unlike creating a new blockchain (coin), token development leverages established networks like Ethereum, Binance Smart Chain, or Solana to deploy a new digital asset.</p>
+            <h5>Key components include</h5>
+            <ul>
+              <li>Smart contract creation (code defining token rules)</li>
+              <li>Token deployment on blockchain</li>
+              <li>Security auditing</li>
+              <li>Integration with wallets and exchanges</li>
+              <li>Community building and marketing</li>
+            </ul>
+            <h5>Tokens are used for</h5>
+            <ul>
+              <li>Fundraising (ICOs/IDOs)</li>
+              <li>Utility within projects (governance, access rights)</li>
+              <li>Trading on exchanges</li>
+              <li>Incentive mechanisms</li>
+            </ul>
+            <p>Most projects choose existing blockchains instead of building their own because it's faster, cheaper ($3,000–50,000 vs $100,000+), and more secure.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How much does token development cost?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Token development costs range from $3,000–$50,000+ depending on complexity:</p>
+            <h5>Basic Token ($3,000–8,000)</h5>
+            <ul>
+              <li>Simple ERC-20/BEP-20 token</li>
+              <li>Standard smart contract and basic testing</li>
+              <li>1–2 week delivery</li>
+              <li>Includes deployment, logo, and documentation</li>
+            </ul>
+            <h5>Standard Token ($8,000–15,000)</h5>
+            <ul>
+              <li>Custom features (staking, minting, burn)</li>
+              <li>Security audit, website and branding</li>
+              <li>Exchange integration — 3–4 week delivery</li>
+            </ul>
+            <h5>Advanced Token ($15,000–50,000+)</h5>
+            <ul>
+              <li>Complex tokenomics and advanced security features</li>
+              <li>Full smart contract audit and marketing support</li>
+              <li>4–8 week delivery</li>
+            </ul>
+            <div class="faq-note"><strong>Important:</strong> We provide development services only. Token price, value, and market performance depend on many factors outside our control. We do not guarantee any returns, investments, or price appreciation.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What's the difference between ERC-20 and BEP-20 tokens?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>ERC-20 and BEP-20 are token standards on different blockchains:</p>
+            <h5>ERC-20 (Ethereum)</h5>
+            <ul>
+              <li>Network fees: $5–50+ per transaction</li>
+              <li>Speed: 12–15 seconds</li>
+              <li>Longest track record — all major exchanges support ERC-20</li>
+            </ul>
+            <h5>BEP-20 (Binance Smart Chain)</h5>
+            <ul>
+              <li>Network fees: $0.10–1.00 per transaction</li>
+              <li>Speed: 3–5 seconds</li>
+              <li>Lower cost — most major exchanges support BEP-20</li>
+            </ul>
+            <div class="faq-table-wrap">
+              <table class="faq-table">
+                <thead>
+                  <tr><th>Feature</th><th>ERC-20</th><th>BEP-20</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Gas Fees</td><td>High ($5–50)</td><td>Low ($0.10–1)</td></tr>
+                  <tr><td>Speed</td><td>12–15 sec</td><td>3–5 sec</td></tr>
+                  <tr><td>Exchange Lists</td><td>100%</td><td>95%+</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Choose ERC-20 for maximum exchange compatibility. Choose BEP-20 for lower fees and faster transactions. Many successful projects launch on both blockchains.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How long does token development take?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>Simple Token: 1–2 weeks</h5>
+            <p>Basic ERC-20/BEP-20, no custom features — $3,000–5,000</p>
+            <h5>Standard Token: 3–4 weeks</h5>
+            <p>Custom features, smart contract audit, website — $8,000–15,000</p>
+            <h5>Complex Token: 4–8 weeks</h5>
+            <p>Advanced features (vesting, governance), full audit — $15,000–50,000+</p>
+            <h5>Timeline breakdown</h5>
+            <ul>
+              <li>Week 1: Requirements and design</li>
+              <li>Week 2: Smart contract coding</li>
+              <li>Week 3: Testing and audit</li>
+              <li>Week 4: Deployment and integration</li>
+              <li>Week 5+: Listing and marketing support (if included)</li>
+            </ul>
+            <p>We offer express deployment for urgent projects (1 week) at premium pricing.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How do I list my coin on Binance?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>Technical requirements</h5>
+            <ul>
+              <li>Operational blockchain (mainnet running)</li>
+              <li>Active node infrastructure and block explorer</li>
+              <li>Smart contract audit recommended</li>
+            </ul>
+            <h5>Market requirements</h5>
+            <ul>
+              <li>Market cap generally $1M+ (not guaranteed)</li>
+              <li>Trading volume $500K+ daily on another exchange</li>
+              <li>Active community: 5,000+ holders</li>
+              <li>Legal compliance in relevant jurisdictions</li>
+            </ul>
+            <h5>Listing process</h5>
+            <ol style="padding-left:20px;margin-bottom:14px;">
+              <li>Meet requirements (4–12 weeks)</li>
+              <li>Prepare documentation (2–4 weeks)</li>
+              <li>Submit application via Binance official form</li>
+              <li>Binance review (2–8 weeks)</li>
+              <li>Approval and listing (1–2 weeks)</li>
+            </ol>
+            <div class="faq-note"><strong>Important:</strong> Binance does not guarantee listing approval. Consider listing on smaller exchanges first (KuCoin, Gate.io) to build track record, then apply to Binance. We help prepare documentation and optimize your application.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What's the cost to list on Binance?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>Official Binance fees</h5>
+            <ul>
+              <li>Listing fee: $50,000–1,000,000+ (set by Binance)</li>
+              <li>Validation fee: $5,000–50,000 (technical review)</li>
+            </ul>
+            <h5>Additional costs</h5>
+            <ul>
+              <li>Legal review: $2,000–5,000</li>
+              <li>Documentation preparation: $1,000–3,000</li>
+              <li>Marketing/PR: $5,000–50,000 (recommended)</li>
+              <li>Node infrastructure: $2,000–10,000/month (ongoing)</li>
+            </ul>
+            <p><strong>Total estimated cost:</strong> $70,000–1,100,000+</p>
+            <div class="faq-note">Listing costs vary. This is an experience-based estimate. <a href="book.html">Contact us</a> for a free cost assessment based on your project.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How to list coin on CoinMarketCap?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>CMC listing requirements</h5>
+            <ul>
+              <li>Listed on at least one exchange with live trading data</li>
+              <li>Valid smart contract on a public blockchain</li>
+              <li>1,000+ token holders and minimum transaction volume</li>
+              <li>Professional website and active social media</li>
+            </ul>
+            <h5>Timeline</h5>
+            <ul>
+              <li>List on exchange (1–4 weeks)</li>
+              <li>Build 1,000+ holders (2–8 weeks)</li>
+              <li>Submit at coinmarketcap.com/request</li>
+              <li>CMC review (3–7 days average)</li>
+            </ul>
+            <p><strong>Cost:</strong> Free — CMC does not charge listing fees.</p>
+            <p>Average time to CMC listing from token creation: 6–12 weeks. We help prepare your project for CMC listing.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What's the difference between CoinMarketCap and CoinGecko?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>CoinMarketCap (CMC)</h5>
+            <ul>
+              <li>Ranking: 24h trading volume</li>
+              <li>500+ exchange data sources — 150M+ monthly users</li>
+              <li>Acquired by Binance — highest authority in the space</li>
+            </ul>
+            <h5>CoinGecko</h5>
+            <ul>
+              <li>Ranking: market cap + volume + trust score</li>
+              <li>900+ exchange data sources — 100M+ monthly users</li>
+              <li>Independent — excellent reputation for transparency</li>
+            </ul>
+            <div class="faq-table-wrap">
+              <table class="faq-table">
+                <thead>
+                  <tr><th>Factor</th><th>CMC</th><th>CoinGecko</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Authority</td><td>Highest</td><td>Very High</td></tr>
+                  <tr><td>Review Speed</td><td>3–7 days</td><td>3–7 days</td></tr>
+                  <tr><td>Cost</td><td>Free</td><td>Free</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Strategy: list on both for maximum visibility. Exchange listing first, then CMC, then CoinGecko.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">Do I need a smart contract audit?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Smart contract audits are not mandatory, but highly recommended. An audit is a security review analyzing your token's code for vulnerabilities, logic errors, gas inefficiencies, and compliance issues.</p>
+            <h5>Why audits matter</h5>
+            <ul>
+              <li>Security: identifies bugs before launch</li>
+              <li>Trust: shows your project takes security seriously</li>
+              <li>Exchange listing: many exchanges prefer audited projects</li>
+              <li>Legal: demonstrates due diligence</li>
+            </ul>
+            <h5>Audit types</h5>
+            <ul>
+              <li><strong>Full audit ($2,000–8,000):</strong> complete review, 2–4 weeks, detailed report</li>
+              <li><strong>Light audit ($500–1,500):</strong> quick review, 3–5 days, good for simple tokens</li>
+            </ul>
+            <p><strong>Yes</strong> if raising funds or targeting major exchanges. <strong>No</strong> if testing on testnet or building a small learning project.</p>
+            <div class="faq-note">An audit doesn't guarantee 100% security. Best practice: audit + bug bounty + ongoing monitoring.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How long does a smart contract audit take?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <ul>
+              <li>Simple token (basic ERC-20/BEP-20): 3–5 days</li>
+              <li>Standard token (custom features): 1–2 weeks</li>
+              <li>Complex DeFi (multiple functions): 2–4 weeks</li>
+            </ul>
+            <h5>Typical timeline</h5>
+            <ul>
+              <li>Day 1: Initial review and scoping</li>
+              <li>Days 2–3: Deep analysis and testing</li>
+              <li>Days 4–5: Report drafting</li>
+              <li>Days 6–10: Client feedback, revisions, and final report</li>
+            </ul>
+            <p>We offer express audits for projects with tight timelines. Plan 2–3 weeks for audit in your launch timeline to avoid delays.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How do you help with exchange listing?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>Our exchange listing support</h5>
+            <ul>
+              <li><strong>Requirements analysis:</strong> assess your project against exchange criteria</li>
+              <li><strong>Documentation:</strong> white paper sections, team info, marketing materials</li>
+              <li><strong>Market preparation:</strong> community building, initial trading volume</li>
+              <li><strong>Application support:</strong> submit applications and answer exchange questions</li>
+              <li><strong>Post-listing:</strong> CMC/CoinGecko listing and ongoing coordination</li>
+            </ul>
+            <p>85%+ of our clients get listed on 3+ exchanges.</p>
+            <div class="faq-note">We provide consulting and support services. Exchange approval is ultimately decided by the exchange — we do not guarantee listing approval.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">Do you guarantee my project will get listed?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p><strong>No</strong> — we do not guarantee listing approval. Exchange decisions depend on your project's fundamentals, team transparency, community engagement, trading volume, regulatory compliance, and the exchange's current criteria.</p>
+            <h5>What we guarantee</h5>
+            <ul>
+              <li>Professional consultation and guidance</li>
+              <li>Documentation preparation and requirements assessment</li>
+              <li>Application support and expert advice from 8+ years of experience</li>
+            </ul>
+            <p>Our success rate: 85%+ listed within 6 months, 95%+ within 12 months, average 3–5 exchanges per client. We provide honest assessment and will tell you if your project needs more work before applying.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What makes a successful crypto project?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>Success factors</h5>
+            <ul>
+              <li><strong>Legitimate use case:</strong> solves a real problem with clear token utility</li>
+              <li><strong>Strong team:</strong> identifiable members with verifiable backgrounds</li>
+              <li><strong>Active community:</strong> 5,000+ engaged followers with genuine discussions</li>
+              <li><strong>Technical foundation:</strong> secure smart contracts, working MVP, active development</li>
+              <li><strong>Transparency:</strong> regular updates, honest roadmap tracking</li>
+              <li><strong>Marketing:</strong> professional website, social presence, partnerships</li>
+              <li><strong>Regulatory awareness:</strong> compliance, clear tokenomics, proper disclaimers</li>
+            </ul>
+            <h5>Red flags to avoid</h5>
+            <ul>
+              <li>Anonymous team, guaranteed returns promises, no white paper</li>
+              <li>Copy of other projects, no roadmap, inactive development</li>
+            </ul>
+            <div class="faq-note">Even with all success factors, crypto is risky. Success is never guaranteed. Build real value, not just hype.</div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">What blockchain should I choose for my token?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <div class="faq-table-wrap">
+              <table class="faq-table">
+                <thead>
+                  <tr><th>Chain</th><th>Gas Fees</th><th>Speed</th><th>Best For</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Ethereum (ERC-20)</td><td>High ($5–50)</td><td>12–15s</td><td>DeFi, max compatibility</td></tr>
+                  <tr><td>BSC (BEP-20)</td><td>Low ($0.10)</td><td>3–5s</td><td>Gaming, startups, DeFi</td></tr>
+                  <tr><td>Solana (SPL)</td><td>Tiny ($0.01)</td><td>400ms</td><td>Gaming, NFTs, high-speed</td></tr>
+                  <tr><td>Polygon</td><td>Low ($0.01)</td><td>2–3s</td><td>Ethereum bridge strategy</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p><strong>Recommendation:</strong> For maximum reach, start on Ethereum + BSC. For cost-conscious projects, BSC. For bleeding edge, Solana. Successful projects often go multi-chain. We support all chains — let us help you choose.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">How do I get listed on CoinGecko?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <h5>CoinGecko listing requirements</h5>
+            <ul>
+              <li>Listed on at least one exchange with active 24h+ trading volume</li>
+              <li>500+ social media followers (lower threshold than CMC)</li>
+              <li>Public smart contract address and block explorer access</li>
+              <li>Project website, description, roadmap, and contact information</li>
+            </ul>
+            <h5>Submission process</h5>
+            <ol style="padding-left:20px;margin-bottom:14px;">
+              <li>Visit coingecko.com/en/request_coin</li>
+              <li>Fill project information form</li>
+              <li>Provide exchange trading pair and submit</li>
+              <li>CoinGecko review (3–7 days)</li>
+            </ol>
+            <p><strong>Cost:</strong> Free. CoinGecko is often easier for early-stage projects. Successful projects list on both CMC and CoinGecko for maximum data availability.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <h2 data-aos="fade-up">Still Have Questions?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Book a free consultation, our team will give you honest answers about your project.</p>
+      <div class="home-cta-row" data-aos="fade-up" data-aos-delay="200">
+        <a href="book.html" class="btn"><span>Book a Call</span></a>
+        <a href="contact.html" class="btn btn-outline"><span>Contact Us</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/faq.js"></script>
+</body>
+
+</html>

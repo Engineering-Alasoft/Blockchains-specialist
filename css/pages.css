@@ -741,3 +741,1400 @@
     bottom: 88px;
   }
 }
+
+/* ============================================================
+   FAQ PAGE
+   ============================================================ */
+.faq-section {
+  padding: 90px 0;
+  background: var(--bg-light);
+}
+
+.faq-intro {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+  overflow: hidden;
+  transition: border-color ease-out .3s, box-shadow ease-out .3s;
+}
+
+.faq-item.open {
+  border-color: rgba(239, 35, 60, .18);
+  box-shadow: 0 8px 28px rgba(239, 35, 60, .08);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.45;
+  transition: color ease-out .3s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-question:hover,
+.faq-item.open .faq-question {
+  color: var(--primary);
+}
+
+.faq-question i {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--primary);
+  background: rgba(239, 35, 60, .08);
+  transition: transform .35s ease, background ease-out .3s;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+  background: rgba(239, 35, 60, .14);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .4s ease;
+  border-top: 1px solid transparent;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+  border-top-color: var(--border-subtle);
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 24px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.85;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .3s ease, transform .35s ease, padding .4s ease;
+}
+
+.faq-item.open .faq-answer-inner {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-answer-inner p {
+  margin-bottom: 14px;
+}
+
+.faq-answer-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer-inner ul,
+.faq-answer-inner ol {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+
+.faq-answer-inner li {
+  margin-bottom: 6px;
+}
+
+.faq-answer-inner h5 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.faq-answer-inner h5:first-child {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer,
+  .faq-answer-inner,
+  .faq-question i {
+    transition: none;
+  }
+
+  .faq-answer-inner {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.faq-table-wrap {
+  overflow-x: auto;
+  margin: 14px 0;
+}
+
+.faq-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 320px;
+}
+
+.faq-table th,
+.faq-table td {
+  border: 1px solid var(--border-subtle);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.faq-table th {
+  background: rgba(239, 35, 60, .06);
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.faq-note {
+  padding: 12px 14px;
+  background: rgba(239, 35, 60, .06);
+  border-left: 3px solid var(--primary);
+  margin: 14px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 70px 0;
+  }
+
+  .faq-question {
+    padding: 16px;
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .faq-answer-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .faq-item.open .faq-answer-inner {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .faq-table {
+    font-size: 12px;
+  }
+
+  .faq-table th,
+  .faq-table td {
+    padding: 8px 10px;
+  }
+
+  .landing-stat-grid,
+  .landing-phase-grid,
+  .landing-package-grid,
+  .landing-usecase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-service-block {
+    padding: 28px 20px;
+  }
+}
+
+/* ============================================================
+   TOKENOMICS LANDING PAGE
+   ============================================================ */
+.landing-section {
+  padding: 90px 0;
+}
+
+.landing-section--light {
+  background: var(--bg-light);
+}
+
+.landing-section--white {
+  background: var(--white);
+}
+
+.landing-intro {
+  max-width: 820px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.landing-lead {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--heading);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.landing-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.landing-stat {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.landing-stat strong {
+  display: block;
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.landing-stat span {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.landing-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.landing-panel {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.landing-section--light .landing-panel {
+  background: var(--white);
+}
+
+.landing-panel h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--heading);
+}
+
+.landing-panel--fail h3 {
+  color: var(--primary);
+}
+
+.landing-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.landing-panel li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.landing-panel--fail li::before {
+  content: '✕';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.landing-panel--success li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.landing-panel li strong {
+  color: var(--heading);
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.landing-example {
+  margin-top: 36px;
+  padding: 28px;
+  background: rgba(239, 35, 60, .05);
+  border-left: 4px solid var(--primary);
+}
+
+.landing-example h4 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: var(--heading);
+}
+
+.landing-example p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.landing-example p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-service-block {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 36px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.landing-section--light .landing-service-block {
+  background: var(--white);
+}
+
+.landing-service-block h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--heading);
+}
+
+.landing-service-block > p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.landing-service-block ul {
+  margin: 0 0 18px;
+  padding-left: 20px;
+}
+
+.landing-service-block li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.landing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.landing-phase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.landing-phase {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 24px 20px;
+  border-top: 3px solid var(--primary);
+}
+
+.landing-phase h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.landing-phase ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.landing-phase li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.landing-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.landing-benefit {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.landing-benefit i {
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.landing-benefit h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--heading);
+}
+
+.landing-benefit p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.landing-package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.landing-package {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-package.featured {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(239, 35, 60, .15);
+  border-top: 3px solid var(--primary);
+}
+
+.landing-package h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--heading);
+}
+
+.landing-package .pkg-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.landing-package p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.landing-package ul {
+  padding-left: 18px;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.landing-package li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.landing-package .pkg-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.landing-usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.landing-usecase {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 28px;
+}
+
+.landing-usecase h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--heading);
+}
+
+.landing-usecase > p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.landing-usecase h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.landing-usecase ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.landing-usecase li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.landing-advantage-list {
+  max-width: 760px;
+  margin: 32px auto 0;
+  list-style: none;
+  padding: 0;
+}
+
+.landing-advantage-list li {
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  position: relative;
+}
+
+.landing-advantage-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.landing-advantage-list li strong {
+  color: var(--heading);
+}
+
+.landing-steps {
+  max-width: 640px;
+  margin: 28px auto 0;
+  counter-reset: landing-step;
+  list-style: none;
+  padding: 0;
+}
+
+.landing-steps li {
+  counter-increment: landing-step;
+  position: relative;
+  padding: 0 0 20px 48px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.landing-steps li::before {
+  content: counter(landing-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .landing-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-two-col,
+  .landing-why-grid,
+  .landing-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-phase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-package-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================================
+   TOKENOMICS PAGE (.tokenomics-page)
+   ============================================================ */
+.tokenomics-page .page-hero p {
+  max-width: 720px;
+}
+
+.tokenomics-page .page-hero .btn {
+  margin-top: 8px;
+}
+
+.tokenomics-page .page-hero h1 {
+  font-size: clamp(26px, 4.2vw, 46px);
+  line-height: 1.15;
+}
+
+.tokenomics-hero-tagline {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--white) !important;
+  margin: 20px auto 28px !important;
+  font-style: italic;
+}
+
+.tokenomics-section {
+  padding: 90px 0;
+}
+
+.tokenomics-section--light {
+  background: var(--bg-light);
+}
+
+.tokenomics-section--white {
+  background: var(--white);
+}
+
+.tokenomics-section--cta {
+  background: var(--bg-light);
+  padding-bottom: 100px;
+}
+
+.tokenomics-lead {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.tokenomics-subheading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 48px 0 20px;
+  text-align: center;
+}
+
+.tokenomics-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.tokenomics-stat {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-section--white .tokenomics-stat {
+  background: var(--bg-light);
+}
+
+.tokenomics-stat strong {
+  display: block;
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.tokenomics-stat span {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.tokenomics-failures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tokenomics-failure {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--primary);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-section--white .tokenomics-failure {
+  background: var(--bg-light);
+}
+
+.tokenomics-failure h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+
+.tokenomics-failure p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tokenomics-failure p:last-child {
+  margin-bottom: 0;
+}
+
+.tokenomics-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.tokenomics-checklist li {
+  position: relative;
+  padding: 10px 0 10px 28px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tokenomics-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.tokenomics-checklist--compact li {
+  border-bottom: none;
+  padding: 6px 0 6px 28px;
+}
+
+.tokenomics-callout {
+  margin-top: 48px;
+  padding: 32px;
+  background: rgba(239, 35, 60, .05);
+  border-left: 4px solid var(--primary);
+  text-align: center;
+}
+
+.tokenomics-callout h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--heading);
+}
+
+.tokenomics-callout p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.tokenomics-callout blockquote {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--heading);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.tokenomics-case-study {
+  margin-top: 36px;
+  padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-section--white .tokenomics-case-study {
+  background: var(--bg-light);
+}
+
+.tokenomics-case-study h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tokenomics-case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.tokenomics-case-study-col {
+  padding: 20px;
+  border: 1px solid var(--border-subtle);
+}
+
+.tokenomics-case-study-col--before {
+  border-left: 4px solid #ccc;
+}
+
+.tokenomics-case-study-col--after {
+  border-left: 4px solid var(--primary);
+  background: rgba(239, 35, 60, .04);
+}
+
+.tokenomics-case-study-col h5 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+  color: var(--heading);
+}
+
+.tokenomics-case-study-col p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.tokenomics-case-study-footer {
+  text-align: center;
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
+  font-size: 15px;
+  color: var(--heading);
+}
+
+.tokenomics-service-block {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 36px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-service-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.tokenomics-service-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: rgba(239, 35, 60, .08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.tokenomics-service-block h3 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--heading);
+}
+
+.tokenomics-service-block > p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.tokenomics-service-block ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.tokenomics-service-block li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tokenomics-deliverable,
+.tokenomics-note {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+  padding: 14px 16px;
+  background: rgba(239, 35, 60, .05);
+  border-left: 3px solid var(--primary);
+  margin-bottom: 16px;
+}
+
+.tokenomics-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.tokenomics-framework {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.tokenomics-phase {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 24px 20px;
+  border-top: 3px solid var(--primary);
+}
+
+.tokenomics-section--white .tokenomics-phase {
+  background: var(--bg-light);
+}
+
+.tokenomics-phase h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  line-height: 1.4;
+}
+
+.tokenomics-phase ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.tokenomics-phase li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tokenomics-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.tokenomics-why-panel {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-why-panel--problem {
+  border-left: 4px solid #ccc;
+}
+
+.tokenomics-why-panel--solution {
+  border-left: 4px solid var(--primary);
+}
+
+.tokenomics-why-panel h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--heading);
+}
+
+.tokenomics-why-intro {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.tokenomics-why-panel ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.tokenomics-why-panel li {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.tokenomics-packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.tokenomics-package {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.tokenomics-section--white .tokenomics-package {
+  background: var(--bg-light);
+}
+
+.tokenomics-package--featured {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(239, 35, 60, .15);
+  border-top: 3px solid var(--primary);
+  background: var(--white) !important;
+}
+
+.tokenomics-package h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--heading);
+}
+
+.tokenomics-package-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.tokenomics-package ul {
+  padding-left: 18px;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.tokenomics-package li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tokenomics-pkg-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tokenomics-usecases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.tokenomics-usecase {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.tokenomics-usecase h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--heading);
+}
+
+.tokenomics-usecase > p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.tokenomics-usecase h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.tokenomics-usecase ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.tokenomics-usecase li {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.faq-static {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-static-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faq-static-item:first-child {
+  padding-top: 0;
+}
+
+.faq-static-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-static-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.faq-static-item p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text);
+  margin: 0;
+}
+
+.tokenomics-advantage-list {
+  max-width: 760px;
+  margin: 32px auto 0;
+  list-style: none;
+  padding: 0;
+}
+
+.tokenomics-advantage-list li {
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  position: relative;
+}
+
+.tokenomics-advantage-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.tokenomics-advantage-list li strong {
+  color: var(--heading);
+}
+
+.tokenomics-advantage-close {
+  max-width: 640px;
+  margin: 32px auto 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--heading);
+  line-height: 1.6;
+}
+
+.tokenomics-final-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.tokenomics-final-col h3 {
+  font-size: 17px;
+  margin-bottom: 16px;
+  color: var(--heading);
+}
+
+.tokenomics-steps {
+  counter-reset: tokenomics-step;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tokenomics-steps li {
+  counter-increment: tokenomics-step;
+  position: relative;
+  padding: 0 0 18px 48px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.tokenomics-steps li::before {
+  content: counter(tokenomics-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+}
+
+.tokenomics-final-cta {
+  margin-top: 48px;
+}
+
+.tokenomics-final-cta .btn {
+  min-width: 280px;
+}
+
+.tokenomics-contact {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.tokenomics-contact a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .tokenomics-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tokenomics-case-study-grid,
+  .tokenomics-why-grid,
+  .tokenomics-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tokenomics-framework {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tokenomics-packages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tokenomics-section {
+    padding: 70px 0;
+  }
+
+  .tokenomics-stats,
+  .tokenomics-framework,
+  .tokenomics-packages,
+  .tokenomics-usecases {
+    grid-template-columns: 1fr;
+  }
+
+  .tokenomics-service-block {
+    padding: 28px 20px;
+  }
+
+  .tokenomics-hero-tagline {
+    font-size: 16px !important;
+  }
+}
