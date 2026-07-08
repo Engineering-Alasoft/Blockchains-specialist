@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="DAO development and on-chain governance smart contracts built for real decentralization. OpenZeppelin Governor, Snapshot, treasury management, timelock, and Gnosis Safe implementation on Ethereum, Polygon, Arbitrum, and BNB Chain.">
+  <title>DAO Development & On-Chain Governance Smart Contracts | Blockchains Specialist</title>
+  <meta name="keywords"
+    content="DAO development, on-chain governance, DAO smart contract, OpenZeppelin Governor, Snapshot integration, treasury management smart contract, timelock controller, Gnosis Safe, token voting, DAO governance development">
+  <link rel="canonical" href="https://blockchainsspecialist.com/services/dao-governance-development">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BLOCKCHAINS SPECIALIST">
+  <meta name="theme-color" content="#EF233C">
+
+  <meta property="og:title" content="DAO Development & On-Chain Governance Smart Contracts | Blockchains Specialist">
+  <meta property="og:description"
+    content="DAO and governance infrastructure on OpenZeppelin Governor, Compound Bravo, and Snapshot. Full-system builds: Governor contract, timelock, treasury, and voting UI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blockchainsspecialist.com/services/dao-governance-development">
+  <meta property="og:site_name" content="Blockchains Specialist">
+  <meta property="og:image" content="https://blockchainsspecialist.com/images/og-images/og-dao-governance.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DAO Development & On-Chain Governance Smart Contracts | Blockchains Specialist">
+  <meta name="twitter:description"
+    content="DAO and governance infrastructure on OpenZeppelin Governor, Compound Bravo, and Snapshot. Full-system builds: Governor contract, timelock, treasury, and voting UI.">
+  <meta name="twitter:image" content="https://blockchainsspecialist.com/images/og-images/og-dao-governance.png">
+
+  <link rel="icon" href="../images/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../images/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../images/favicons/site.webmanifest">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/pages.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://blockchainsspecialist.com/services/dao-governance-development/#webpage",
+        "url": "https://blockchainsspecialist.com/services/dao-governance-development/",
+        "name": "DAO Development & On-Chain Governance Smart Contracts | Blockchains Specialist",
+        "description": "DAO development and on-chain governance smart contracts. OpenZeppelin Governor, treasury management, timelock, Gnosis Safe, and voting interfaces.",
+        "isPartOf": { "@id": "https://blockchainsspecialist.com/#website" },
+        "about": { "@id": "https://blockchainsspecialist.com/services/dao-governance-development/#service" },
+        "breadcrumb": { "@id": "https://blockchainsspecialist.com/services/dao-governance-development/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://blockchainsspecialist.com/services/dao-governance-development/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://blockchainsspecialist.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://blockchainsspecialist.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": "DAO Governance Development", "item": "https://blockchainsspecialist.com/services/dao-governance-development/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://blockchainsspecialist.com/services/dao-governance-development/#service",
+        "name": "DAO Development & On-Chain Governance",
+        "provider": { "@id": "https://blockchainsspecialist.com/#organization" },
+        "areaServed": "Worldwide",
+        "serviceType": "DAO & Governance Smart Contract Development",
+        "description": "Full DAO and on-chain governance development: Governor contracts, timelock controllers, treasury management, Snapshot integration, Gnosis Safe, and governance dashboards on Ethereum, Polygon, Arbitrum, and BNB Chain."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between on-chain and off-chain DAO governance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Off-chain governance tools like Snapshot allow token holders to vote without gas fees; votes are recorded off-chain and verifiable, but execution requires a team or multi-sig to act on the outcome. On-chain governance executes decisions automatically through smart contracts when voting conditions are met, no team intervention required. Most mature protocols use both: Snapshot for signaling, on-chain Governor contracts for binding execution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you prevent governance attacks like flash loan voting manipulation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We implement voting snapshot blocks; governance weight is measured at a fixed block number before the proposal creation or voting period, not at the time of voting. This prevents an attacker from flash-borrowing large token positions to manipulate a vote outcome. We also implement minimum proposal thresholds and simulate multiple attack vectors on testnet before mainnet deployment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can governance smart contracts be upgraded after deployment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if built with an upgrade path from the start. We implement upgradeable Governor contracts using OpenZeppelin's proxy patterns for projects that need the ability to improve governance parameters post-deployment. We also build fully immutable governance that cannot be altered by any party after deployment for projects that want maximum decentralization credibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What blockchain networks do you build DAO governance on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ethereum, Polygon, BNB Chain, Arbitrum, and Avalanche. Ethereum provides the strongest governance credibility signal for institutional audiences. Polygon and Arbitrum offer significantly lower gas costs for communities with high voting participation rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does DAO governance development take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard governance system — Governor contract, timelock, treasury, and voting integration — takes 3–6 weeks including security review and testnet simulation. A full governance dashboard with custom voting UI adds 2–4 weeks. Complex multi-layer governance with veto councils and custom proposal logic is scoped individually."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://blockchainsspecialist.com/#organization",
+        "name": "BlockchainsSpecialist",
+        "url": "https://blockchainsspecialist.com/",
+        "email": "support@blockchainsspecialist.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blockchainsspecialist.com/#website",
+        "url": "https://blockchainsspecialist.com/",
+        "name": "BlockchainsSpecialist",
+        "publisher": { "@id": "https://blockchainsspecialist.com/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Hero ── */
+    .dao-hero {
+      padding: 150px 0 80px;
+      background: var(--primary);
+      position: relative; overflow: hidden;
+    }
+    .dao-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .dao-hero .container { position: relative; z-index: 1; }
+    .dao-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+    .dao-hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.15); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 2px; margin-bottom: 20px;
+    }
+    .dao-hero h1 {
+      font-size: clamp(24px, 3.5vw, 43px); font-weight: 700; color: #fff;
+      line-height: 1.22; margin-bottom: 20px; max-width: 800px;
+    }
+    .dao-hero-lead    { color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.85; max-width: 700px; margin-bottom: 12px; }
+    .dao-hero-emphasis{ color: rgba(255,255,255,.95); font-size: 15px; font-weight: 600; margin-bottom: 30px; line-height: 1.7; }
+    .dao-hero-stats   { display: flex; gap: 32px; flex-wrap: wrap; padding: 28px 0 0; border-top: 1px solid rgba(255,255,255,.2); }
+    .dao-hero-stat strong { display: block; font-size: 26px; font-weight: 700; color: #fff; }
+    .dao-hero-stat span   { font-size: 12px; color: rgba(255,255,255,.7); font-weight: 500; }
+
+    /* Hero visual */
+    .dao-hero-visual { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .dao-stack { display: flex; flex-direction: column; gap: 10px; width: 190px; }
+    .dao-stack-pill {
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+      border-radius: 4px; padding: 11px 16px;
+      display: flex; align-items: center; gap: 10px;
+      color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .3px;
+    }
+    .dao-stack-pill i { font-size: 15px; color: rgba(255,255,255,.7); flex-shrink: 0; }
+    .dao-stack-pill .dao-pill-badge {
+      margin-left: auto; font-size: 9px; font-weight: 700; letter-spacing: 1px;
+      background: rgba(239,35,60,.3); border: 1px solid rgba(239,35,60,.5);
+      padding: 2px 7px; border-radius: 2px; white-space: nowrap;
+    }
+    .dao-visual-label { color: rgba(255,255,255,.5); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── Sections ── */
+    .dao-section       { padding: 90px 0; }
+    .dao-section--gray { background: var(--bg-light); }
+    .dao-section--dark { background: #1c0008; }
+    .dao-section--dark2{ background: #150003; }
+    .dao-section--dark3{ background: #120002; }
+    .dao-section--dark h2,
+    .dao-section--dark h3,
+    .dao-section--dark h4,
+    .dao-section--dark2 h2,
+    .dao-section--dark2 h3,
+    .dao-section--dark2 h4,
+    .dao-section--dark3 h2,
+    .dao-section--dark3 h3,
+    .dao-section--dark3 h4 { color: #fff; }
+    .dao-section--dark p,  .dao-section--dark li,
+    .dao-section--dark2 p, .dao-section--dark2 li,
+    .dao-section--dark3 p, .dao-section--dark3 li { color: rgba(255,255,255,.75); }
+    .dao-section--dark .eyebrow,
+    .dao-section--dark2 .eyebrow,
+    .dao-section--dark3 .eyebrow { color: var(--primary); }
+
+    /* ── Service cards 3-2-2 ── */
+    .dao-services-wrap { display: flex; flex-direction: column; gap: 24px; }
+    .dao-services-row  { display: grid; gap: 24px; }
+    .dao-services-row--3 { grid-template-columns: repeat(3, 1fr); }
+    .dao-services-row--2 { grid-template-columns: repeat(2, 1fr); max-width: 66.666%; margin: 0 auto; width: 100%; }
+
+    .dao-svc-card {
+      background: #6b0012; border: 2px solid rgba(255,255,255,.08);
+      border-radius: 4px; padding: 34px 30px; position: relative; overflow: hidden;
+      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    .dao-svc-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--primary); transform: scaleX(0); transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .dao-svc-card:hover { transform: translateY(-6px); background: #8c0018; box-shadow: 0 20px 50px rgba(239,35,60,.25); }
+    .dao-svc-card:hover::before { transform: scaleX(1); }
+    .dao-svc-icon {
+      width: 50px; height: 50px; background: rgba(239,35,60,.2); border: 1px solid rgba(239,35,60,.35);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: #ff6b7a; margin-bottom: 18px;
+    }
+    .dao-svc-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    .dao-svc-card p  { font-size: 13.5px; color: rgba(255,255,255,.68); line-height: 1.75; margin: 0; }
+    .dao-svc-num { position: absolute; top: 14px; right: 18px; font-size: 36px; font-weight: 700; color: rgba(255,255,255,.05); line-height: 1; }
+
+    /* ── On-chain vs off-chain two-column ── */
+    .dao-arch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .dao-arch-panel {
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--primary); border-radius: 3px; padding: 36px 32px;
+    }
+    .dao-arch-panel h3 {
+      font-size: 17px; font-weight: 700; color: var(--heading); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .dao-arch-panel h3 i { color: var(--primary); font-size: 18px; }
+    .dao-arch-panel .dao-arch-sub { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+    .dao-arch-panel p { font-size: 14px; color: var(--text); line-height: 1.8; margin: 0; }
+    .dao-arch-mature {
+      text-align: center; margin-top: 32px;
+      background: var(--bg-light); border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--primary); padding: 24px 32px; border-radius: 2px;
+    }
+    .dao-arch-mature p { font-size: 14.5px; color: var(--text); line-height: 1.8; margin: 0; }
+    .dao-arch-mature strong { color: var(--primary); }
+
+    /* ── Why it matters ── */
+    .dao-why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .dao-why-card {
+      background: #240008; border: 1px solid rgba(255,255,255,.08);
+      border-left: 4px solid rgba(239,35,60,.5); border-radius: 3px; padding: 30px 28px;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .dao-why-card:hover { border-left-color: var(--primary); box-shadow: 0 12px 40px rgba(239,35,60,.18); }
+    .dao-why-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .dao-why-card h4 i { font-size: 16px; color: #ff6b7a; flex-shrink: 0; }
+    .dao-why-card p  { font-size: 13.5px; color: rgba(255,255,255,.65); line-height: 1.75; margin: 0; }
+
+    /* ── Process snake (6 steps: 3 + 3 with full snake) ── */
+    .dao-proc-row { display: grid; gap: 24px; }
+    .dao-proc-row--3l { grid-template-columns: repeat(3, 1fr); }
+    .dao-proc-row--3r { grid-template-columns: repeat(3, 1fr); }
+
+    .dao-snake-conn { height: 72px; display: flex; align-items: stretch; }
+    .dao-bend--right {
+      width: 100%;
+      border: 2px dashed rgba(239,35,60,.55); border-left: none;
+      border-radius: 0 40px 40px 0; position: relative;
+    }
+    .dao-bend--right::after {
+      content: ''; position: absolute; left: -1px; bottom: -7px;
+      border-top: 7px solid rgba(239,35,60,.8);
+      border-left: 5px solid transparent; border-right: 5px solid transparent;
+    }
+
+    .dao-step-card {
+      background: #6b0012; border: 2px solid rgba(255,255,255,.08);
+      border-radius: 4px; padding: 30px 28px; position: relative;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .dao-step-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(239,35,60,.2); }
+    .dao-step-num  { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
+    .dao-step-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .dao-step-card p  { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.72; margin: 0; }
+    .dao-step-icon {
+      position: absolute; top: 18px; right: 18px;
+      width: 34px; height: 34px; background: rgba(239,35,60,.15); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 14px; color: #ff8a96;
+    }
+
+    /* ── Stats strip ── */
+    .dao-stats-strip { background: var(--primary); padding: 60px 0; }
+    .dao-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+    .dao-stat-box { padding: 0 24px; border-right: 1px solid rgba(255,255,255,.2); }
+    .dao-stat-box:last-child { border-right: none; }
+    .dao-stat-box strong { display: block; font-size: 38px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .dao-stat-box span   { font-size: 13px; color: rgba(255,255,255,.78); font-weight: 500; }
+
+    /* ── Who this is for ── */
+    .dao-for-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .dao-for-card {
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--primary); border-radius: 3px; padding: 28px 24px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .dao-for-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,.08); transform: translateY(-4px); }
+    .dao-for-card i  { font-size: 24px; color: var(--primary); margin-bottom: 14px; display: block; }
+    .dao-for-card h4 { font-size: 15px; font-weight: 700; color: var(--heading); margin-bottom: 8px; }
+    .dao-for-card p  { font-size: 13px; color: var(--text); line-height: 1.7; margin: 0; }
+
+    /* ── FAQ ── */
+    .dao-faq { max-width: 820px; margin: 0 auto; }
+    .dao-faq-item { border-bottom: 1px solid var(--border-subtle); }
+    .dao-faq-item:first-child { border-top: 1px solid var(--border-subtle); }
+    .dao-faq-q {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 22px 0; display: flex; justify-content: space-between;
+      align-items: center; gap: 16px; cursor: pointer;
+      font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600;
+      color: var(--heading); transition: color .2s;
+    }
+    .dao-faq-q:hover { color: var(--primary); }
+    .dao-faq-q i { font-size: 14px; color: var(--primary); flex-shrink: 0; transition: transform .3s ease; }
+    .dao-faq-item.open .dao-faq-q i { transform: rotate(45deg); }
+    .dao-faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .dao-faq-item.open .dao-faq-a { max-height: 360px; }
+    .dao-faq-a p { font-size: 14.5px; color: var(--text); line-height: 1.8; padding-bottom: 22px; margin: 0; }
+
+    /* ── Supported networks tag strip ── */
+    .dao-networks { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .dao-net-tag {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.7); font-size: 12px; font-weight: 600;
+      padding: 5px 14px; border-radius: 3px; letter-spacing: .5px;
+    }
+
+    /* ── CTA ── */
+    .dao-cta {
+      padding: 100px 0; background: #1c0008; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .dao-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(239,35,60,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239,35,60,.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .dao-cta .container { position: relative; z-index: 1; }
+    .dao-cta h2 { color: #fff; font-size: clamp(22px, 3.5vw, 38px); margin-bottom: 16px; }
+    .dao-cta p  { color: rgba(255,255,255,.75); font-size: 16px; max-width: 640px; margin: 0 auto 14px; line-height: 1.75; }
+    .dao-cta-sub { color: rgba(255,255,255,.55) !important; font-size: 15px !important; font-weight: 600; }
+    .dao-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .dao-hero-inner         { grid-template-columns: 1fr; }
+      .dao-hero-visual        { display: none; }
+      .dao-services-row--3    { grid-template-columns: repeat(2, 1fr); }
+      .dao-services-row--2    { max-width: 100%; grid-template-columns: repeat(2, 1fr); }
+      .dao-arch-grid          { grid-template-columns: 1fr; }
+      .dao-why-grid           { grid-template-columns: 1fr; }
+      .dao-for-grid           { grid-template-columns: repeat(2, 1fr); }
+      .dao-proc-row--3l,
+      .dao-proc-row--3r       { grid-template-columns: repeat(2, 1fr); }
+      .dao-snake-conn         { display: none; }
+      .dao-stats-row          { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .dao-stat-box           { border-right: none; border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 28px; }
+      .dao-stat-box:nth-child(2),
+      .dao-stat-box:last-child { border-bottom: none; }
+    }
+    @media (max-width: 600px) {
+      .dao-services-row--3,
+      .dao-services-row--2,
+      .dao-proc-row--3l,
+      .dao-proc-row--3r { grid-template-columns: 1fr; }
+      .dao-why-grid,
+      .dao-for-grid     { grid-template-columns: 1fr; }
+      .dao-stats-row    { grid-template-columns: 1fr; }
+      .dao-stat-box     { border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 24px; }
+      .dao-stat-box:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-logo">BLOCKCHAINS<span>SPECIALIST</span></div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <nav class="navbar navbar--light scrolled" id="navbar">
+    <a href="../index.html" class="nav-logo"><img src="../images/logo.svg" alt="Blockchains Specialist"></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../services.html" class="active">Services</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../book.html" class="btn"><span>Book a Call</span></a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="openMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="../about.html" onclick="closeMenu()">About</a>
+    <a href="../services.html" onclick="closeMenu()">Services</a>
+    <a href="../pricing.html" onclick="closeMenu()">Pricing</a>
+    <a href="../blog.html" onclick="closeMenu()">Blog</a>
+    <a href="../contact.html" onclick="closeMenu()">Contact</a>
+    <a href="../book.html" onclick="closeMenu()" class="btn"><span>Book a Call</span></a>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="dao-hero">
+    <div class="container">
+      <div class="breadcrumb" style="justify-content:flex-start; margin-bottom:24px;">
+        <a href="../index.html" style="color:rgba(255,255,255,.6);">Home</a>
+        <span style="color:rgba(255,255,255,.3);">/</span>
+        <a href="../services.html" style="color:rgba(255,255,255,.6);">Services</a>
+        <span style="color:rgba(255,255,255,.3);">/</span>
+        <span style="color:rgba(255,255,255,.5);">DAO &amp; Governance Development</span>
+      </div>
+      <div class="dao-hero-inner">
+        <div>
+          <div class="dao-hero-tag">
+            <i class="fas fa-landmark"></i>
+            DAO &amp; Governance Specialists
+          </div>
+          <h1>DAO Development &amp; On-Chain Governance — Built for Communities That Demand Real Decentralization</h1>
+          <p class="dao-hero-lead">Token holders are not passive. They watch. They compare what you promised against what you delivered. And in Web3, the gap between "we plan to decentralize" and an actual on-chain governance system that executes autonomously is where community trust goes to die.</p>
+          <p class="dao-hero-lead">A token without governance infrastructure is a project asking its holders to trust a team indefinitely. That worked in 2018. It does not work now. Institutional investors require governance documentation before committing capital. Exchange listing reviewers flag centralized control structures as risk signals.</p>
+          <p class="dao-hero-emphasis">Blockchains Specialist builds DAO and governance infrastructure on proven on-chain frameworks — OpenZeppelin Governor, Compound Bravo, Snapshot, and fully custom implementations — for projects that need to give their community real governance power without sacrificing operational security during the transition.</p>
+          <a href="../book.html" class="btn btn-outline" style="margin-top:8px;"><span>Book a Free Governance Architecture Consultation</span></a>
+          <div class="dao-hero-stats">
+            <div class="dao-hero-stat"><strong>OZ</strong><span>OpenZeppelin Governor</span></div>
+            <div class="dao-hero-stat"><strong>Snap</strong><span>Snapshot Integration</span></div>
+            <div class="dao-hero-stat"><strong>Safe</strong><span>Gnosis Safe Multi-Sig</span></div>
+            <div class="dao-hero-stat"><strong>Lock</strong><span>Timelock Controller</span></div>
+          </div>
+        </div>
+        <div class="dao-hero-visual">
+          <div class="dao-stack">
+            <div class="dao-stack-pill">
+              <i class="fas fa-landmark"></i>
+              Governor Contract
+              <span class="dao-pill-badge">OZ</span>
+            </div>
+            <div class="dao-stack-pill">
+              <i class="fas fa-clock"></i>
+              Timelock Controller
+              <span class="dao-pill-badge">TL</span>
+            </div>
+            <div class="dao-stack-pill">
+              <i class="fas fa-vault"></i>
+              Treasury Management
+              <span class="dao-pill-badge">DAO</span>
+            </div>
+            <div class="dao-stack-pill">
+              <i class="fas fa-camera"></i>
+              Snapshot Voting
+              <span class="dao-pill-badge">OFF</span>
+            </div>
+            <div class="dao-stack-pill">
+              <i class="fas fa-shield-halved"></i>
+              Gnosis Safe Multi-Sig
+              <span class="dao-pill-badge">SAFE</span>
+            </div>
+          </div>
+          <div class="dao-visual-label">Governance Stack We Build</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SERVICES — 3-2-2 grid (7 cards)
+  ══════════════════════════════════════ -->
+  <section class="dao-section dao-section--dark">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up" style="margin-bottom:52px;">
+        <div class="eyebrow">What We Build</div>
+        <h2>DAO &amp; Governance Development <span style="color:var(--primary);">Services We Provide</span></h2>
+        <p style="color:rgba(255,255,255,.7);">From a single Governor contract to a full on-chain governance ecosystem with treasury, voting UI, and legal structure advisory.</p>
+      </div>
+
+      <div class="dao-services-wrap">
+        <!-- Row 1 — 3 cards -->
+        <div class="dao-services-row dao-services-row--3">
+          <div class="dao-svc-card" data-aos="fade-up">
+            <div class="dao-svc-num">01</div>
+            <div class="dao-svc-icon"><i class="fas fa-landmark"></i></div>
+            <h3>On-Chain Governance Smart Contract Development</h3>
+            <p>Proposal creation, configurable voting periods, quorum thresholds, execution delays, veto mechanisms, and guardian roles — deployed as a fully audited smart contract system on your chosen network. Every parameter is set to your governance design, not a generic default that does not reflect your community's actual structure.</p>
+          </div>
+          <div class="dao-svc-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="dao-svc-num">02</div>
+            <div class="dao-svc-icon"><i class="fas fa-person-booth"></i></div>
+            <h3>Token-Based Voting Systems &amp; Snapshot Integration</h3>
+            <p>Governance voting weight tied to token holdings, staked token positions, or NFT-gated membership. Single-token, multi-token, and delegation-based voting structures available. Snapshot integration for gas-free off-chain signaling with on-chain execution binding — the standard approach for active communities where gas costs would otherwise suppress participation.</p>
+          </div>
+          <div class="dao-svc-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="dao-svc-num">03</div>
+            <div class="dao-svc-icon"><i class="fas fa-vault"></i></div>
+            <h3>Treasury Management Smart Contracts</h3>
+            <p>On-chain treasury with multi-signature access controls, proposal-gated spending authorization, timelock execution delays, and complete transaction transparency on-chain. Your community does not have to trust announcements about how funds are being used — they can verify every spend independently against the contract.</p>
+          </div>
+        </div>
+
+        <!-- Row 2 — 2 center cards -->
+        <div class="dao-services-row dao-services-row--2">
+          <div class="dao-svc-card" data-aos="fade-up">
+            <div class="dao-svc-num">04</div>
+            <div class="dao-svc-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Timelock &amp; Multi-Sig Implementation for Decentralization Commitments</h3>
+            <p>Gnosis Safe multi-signature wallet setup and timelock controller contracts that structurally prevent unilateral admin actions. For projects that have made public decentralization commitments, these are not optional — they are the on-chain proof that those commitments are real and enforceable, not marketing language.</p>
+          </div>
+          <div class="dao-svc-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="dao-svc-num">05</div>
+            <div class="dao-svc-icon"><i class="fas fa-sliders"></i></div>
+            <h3>Custom DAO Governance Logic for Complex Protocol Needs</h3>
+            <p>Veto councils, emergency pause mechanisms, guardian override roles, graduated governance rollouts, and staged decentralization paths. For projects that need a credible transition from centralized launch control to full community governance without creating operational vulnerabilities during the handover period.</p>
+          </div>
+        </div>
+
+        <!-- Row 3 — 2 center cards -->
+        <div class="dao-services-row dao-services-row--2">
+          <div class="dao-svc-card" data-aos="fade-up">
+            <div class="dao-svc-num">06</div>
+            <div class="dao-svc-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h3>DAO Formation &amp; Legal Structure Advisory</h3>
+            <p>Technical DAO setup paired with guidance on legal wrapper structures — Wyoming DAO LLC, Marshall Islands DAO, and other recognized legal frameworks — for projects that need a legal entity identity alongside on-chain governance. Operating a DAO without a legal wrapper creates personal liability exposure for core contributors that most founding teams do not anticipate until it becomes a problem.</p>
+          </div>
+          <div class="dao-svc-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="dao-svc-num">07</div>
+            <div class="dao-svc-icon"><i class="fas fa-display"></i></div>
+            <h3>Governance Dashboard &amp; Voting Interface Development</h3>
+            <p>User-facing interface for proposal browsing, active voting, token delegation, and treasury visibility — connected directly to your live governance contracts with real-time on-chain data. Governance that requires technical knowledge to participate is governance that most of your holders will never use. We build for participation, not just compliance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ON-CHAIN vs OFF-CHAIN
+  ══════════════════════════════════════ -->
+  <section class="dao-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Architecture Guide</div>
+        <h2>On-Chain vs Off-Chain Governance — <span>Understanding the Right Architecture for Your Project</span></h2>
+        <p>Most serious Web3 projects do not choose between on-chain and off-chain governance. They use both — for different purposes at different stages.</p>
+      </div>
+      <div class="dao-arch-grid" data-aos="fade-up">
+        <div class="dao-arch-panel">
+          <div class="dao-arch-sub">Off-Chain Governance</div>
+          <h3><i class="fas fa-camera"></i> Snapshot — Gas-Free Signaling</h3>
+          <p>Off-chain governance (Snapshot) allows token holders to signal preferences and vote on proposals without paying gas fees. Votes are recorded off-chain and verifiable, but proposal execution is still controlled by a team or multi-sig acting on the outcome. This is the right starting point for communities where gas costs would suppress participation, or for projects in early governance stages where full on-chain execution is premature.</p>
+        </div>
+        <div class="dao-arch-panel">
+          <div class="dao-arch-sub">On-Chain Governance</div>
+          <h3><i class="fas fa-landmark"></i> Governor — Binding Execution</h3>
+          <p>On-chain governance executes decisions automatically through smart contracts when voting conditions are met — no team action required, no possibility of ignoring the outcome. Proposals that reach quorum and pass are executed by the contract itself after the timelock delay. This is the standard that institutional investors, serious community members, and credibility-focused listing reviewers expect from mature protocols.</p>
+        </div>
+      </div>
+      <div class="dao-arch-mature" data-aos="fade-up">
+        <p>The mature architecture is <strong>Snapshot for community signaling and temperature checks</strong>, with <strong>on-chain Governor contracts for binding execution</strong> of approved proposals. We design and build both layers as an integrated system — not two disconnected tools bolted together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHY GOVERNANCE ARCHITECTURE MATTERS
+  ══════════════════════════════════════ -->
+  <section class="dao-section dao-section--dark2">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Beyond Community Relations</div>
+        <h2>Why Governance Architecture Matters <span style="color:var(--primary);">Beyond Community Relations</span></h2>
+        <p style="color:rgba(255,255,255,.7);">Most teams think about governance as a community feature. It is also a business-critical infrastructure decision that affects fundraising, exchange relationships, and long-term protocol security.</p>
+      </div>
+      <div class="dao-why-grid" data-aos="fade-up">
+        <div class="dao-why-card">
+          <h4><i class="fas fa-building-columns"></i> Institutional Capital Requires It</h4>
+          <p>Venture funds and institutional investors evaluating Web3 projects want to see governance documentation — voting mechanisms, treasury controls, upgrade authority, and admin key management — before committing. A project without formal governance is a project where all risk is concentrated in a founding team that could exit, disagree, or make unilateral decisions at any time.</p>
+        </div>
+        <div class="dao-why-card">
+          <h4><i class="fas fa-list-check"></i> Exchange Listing Reviewers Flag Centralization</h4>
+          <p>CEX and DEX listing reviewers increasingly evaluate ownership structure and admin control concentration as risk factors. Unrenounced ownership, single admin keys with no timelock, and no community governance mechanism are compliance flags that affect listing outcomes directly.</p>
+        </div>
+        <div class="dao-why-card">
+          <h4><i class="fas fa-triangle-exclamation"></i> Governance Attacks Are a Real Threat</h4>
+          <p>Flash loan voting manipulation, proposal spam attacks, quorum manipulation, and treasury drainage through malicious proposals are documented attack vectors against governance systems. We build flash loan resistance into voting snapshot blocks, implement proposal thresholds that prevent spam, and simulate attack scenarios on testnet before mainnet deployment.</p>
+        </div>
+        <div class="dao-why-card">
+          <h4><i class="fas fa-users"></i> Promises Without Proof Destroy Communities</h4>
+          <p>Teams that announce governance roadmaps and do not deliver them on time face community backlash that is disproportionate to the technical delay. The promise of decentralization creates an expectation. Every week it remains undelivered is a week of eroding trust. We build governance infrastructure that lets you make the announcement and deliver the reality simultaneously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STATS STRIP
+  ══════════════════════════════════════ -->
+  <div class="dao-stats-strip">
+    <div class="container">
+      <div class="dao-stats-row">
+        <div class="dao-stat-box" data-aos="fade-up"><strong>OZ</strong><span>OpenZeppelin Governor Standard</span></div>
+        <div class="dao-stat-box" data-aos="fade-up" data-aos-delay="60"><strong>5+</strong><span>Supported Networks</span></div>
+        <div class="dao-stat-box" data-aos="fade-up" data-aos-delay="120"><strong>100%</strong><span>Attack-Simulated Before Mainnet</span></div>
+        <div class="dao-stat-box" data-aos="fade-up" data-aos-delay="180"><strong>Full</strong><span>On-Chain Audit Trail</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PROCESS — 6-step snake (3 + 3)
+  ══════════════════════════════════════ -->
+  <section class="dao-section dao-section--dark3">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up" style="margin-bottom:52px;">
+        <div class="eyebrow">How We Work</div>
+        <h2>How We Build Your <span style="color:var(--primary);">DAO Governance System</span></h2>
+        <p style="color:rgba(255,255,255,.7);">Six stages from governance architecture design through mainnet deployment and admin key handover — every step verifiable by your community.</p>
+      </div>
+
+      <div class="ptl-timeline" data-aos="fade-up">
+        <div class="ptl-axis" aria-hidden="true"></div>
+
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 01"><div class="ptl-ring"></div><div class="ptl-dot">01</div></div>
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 01</span>
+              <div class="ptl-card-icon"><i class="fas fa-compass-drafting"></i></div>
+              <h3>Governance Architecture Design</h3>
+              <p>We map your complete governance model — voting weight structure, proposal thresholds, quorum requirements, voting period length, execution delay, veto mechanisms, and the transition path to target decentralization level.</p>
+              <span class="ptl-card-num" aria-hidden="true">01</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 02</span>
+              <div class="ptl-card-icon"><i class="fas fa-code"></i></div>
+              <h3>Smart Contract System Development</h3>
+              <p>Governor contract, timelock controller, treasury management contract, and voting token integration built as a cohesive system — not isolated contracts with gaps that create security vulnerabilities.</p>
+              <span class="ptl-card-num" aria-hidden="true">02</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 02"><div class="ptl-ring"></div><div class="ptl-dot">02</div></div>
+          <div class="ptl-gap"></div>
+        </div>
+
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 03"><div class="ptl-ring"></div><div class="ptl-dot">03</div></div>
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 03</span>
+              <div class="ptl-card-icon"><i class="fas fa-shield-virus"></i></div>
+              <h3>Security Review &amp; Attack Simulation</h3>
+              <p>We simulate flash loan voting attacks, proposal manipulation vectors, and treasury access exploits before any testnet deployment. A single vulnerability in treasury access can result in complete protocol fund drainage.</p>
+              <span class="ptl-card-num" aria-hidden="true">03</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 04</span>
+              <div class="ptl-card-icon"><i class="fas fa-flask"></i></div>
+              <h3>Testnet Deployment &amp; Full Governance Cycle Simulation</h3>
+              <p>Complete governance cycle run on testnet — proposal creation, community voting, quorum achievement, timelock delay, and execution — with your team participating as voters before your community does.</p>
+              <span class="ptl-card-num" aria-hidden="true">04</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 04"><div class="ptl-ring"></div><div class="ptl-dot">04</div></div>
+          <div class="ptl-gap"></div>
+        </div>
+
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 05"><div class="ptl-ring"></div><div class="ptl-dot">05</div></div>
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 05</span>
+              <div class="ptl-card-icon"><i class="fas fa-display"></i></div>
+              <h3>Governance Dashboard Development</h3>
+              <p>Proposal browser, voting interface, delegation controls, and treasury transparency view built and connected to your live governance contracts. Tested for usability with both Web3-native and non-technical token holders.</p>
+              <span class="ptl-card-num" aria-hidden="true">05</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body"><div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 06</span>
+              <div class="ptl-card-icon"><i class="fas fa-key"></i></div>
+              <h3>Mainnet Deployment &amp; Admin Key Handover</h3>
+              <p>Contracts deployed to mainnet, verified on block explorer, and fully documented. Admin keys transferred to timelock controller or Gnosis Safe multi-sig. Your governance is live and independently verifiable.</p>
+              <span class="ptl-card-num" aria-hidden="true">06</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 06"><div class="ptl-ring"></div><div class="ptl-dot">06</div></div>
+          <div class="ptl-gap"></div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:44px; text-align:center;" data-aos="fade-up">
+        <p style="color:rgba(255,255,255,.5); font-size:13px; margin-bottom:12px; font-weight:600; letter-spacing:.5px; text-transform:uppercase;">Supported Networks</p>
+        <div class="dao-networks" style="justify-content:center;">
+          <span class="dao-net-tag">Ethereum</span>
+          <span class="dao-net-tag">Polygon</span>
+          <span class="dao-net-tag">BNB Chain</span>
+          <span class="dao-net-tag">Arbitrum</span>
+          <span class="dao-net-tag">Avalanche</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHO THIS IS FOR
+  ══════════════════════════════════════ -->
+  <section class="dao-section dao-section--gray">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Ideal Clients</div>
+        <h2>Who This DAO Development <span>Service Is For</span></h2>
+      </div>
+      <div class="dao-for-grid" data-aos="fade-up">
+        <div class="dao-for-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>DeFi Protocols Ready for Formal Governance</h4>
+          <p>That have reached sufficient community size and trading volume to formalize on-chain governance — and need a system built for their actual token structure, not a template deployment.</p>
+        </div>
+        <div class="dao-for-card">
+          <i class="fas fa-handshake"></i>
+          <h4>Projects With Decentralization Commitments to Keep</h4>
+          <p>That made governance commitments to their community, investors, or exchange partners and need to deliver the on-chain infrastructure that proves those commitments are real.</p>
+        </div>
+        <div class="dao-for-card">
+          <i class="fas fa-file-contract"></i>
+          <h4>Tokens With Governance Utility in Tokenomics</h4>
+          <p>Where governance voting rights are described in the whitepaper and token design — and the actual Governor contracts need to match what was promised before the token went live.</p>
+        </div>
+        <div class="dao-for-card">
+          <i class="fas fa-comments"></i>
+          <h4>Informal DAOs Needing On-Chain Formalization</h4>
+          <p>Currently running community voting through Discord polls or off-chain signals who need those processes formalized into verifiable, attack-resistant on-chain governance infrastructure.</p>
+        </div>
+        <div class="dao-for-card">
+          <i class="fas fa-building-columns"></i>
+          <h4>Web3 Projects Pursuing Institutional Investment</h4>
+          <p>That require documented governance structure, treasury controls, and upgrade authority clarity before institutional investors or venture funds will commit capital to the project.</p>
+        </div>
+        <div class="dao-for-card">
+          <i class="fas fa-arrows-spin"></i>
+          <h4>Protocol Teams Transitioning From Multi-Sig Launch</h4>
+          <p>Moving from a multi-sig launch structure to full community governance over a defined timeline — needing a staged, secure handover that does not create operational vulnerabilities during transition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section class="dao-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="eyebrow">Common Questions</div>
+        <h2>Frequently Asked Questions About <span>DAO &amp; Governance Development</span></h2>
+      </div>
+      <div class="dao-faq" data-aos="fade-up">
+
+        <div class="dao-faq-item open">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            What is the difference between on-chain and off-chain DAO governance?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>Off-chain governance tools like Snapshot allow token holders to vote on proposals without gas fees — votes are recorded off-chain and verifiable, but execution requires a team or multi-sig to act on the outcome. On-chain governance executes decisions automatically through smart contracts when voting conditions are met, no team intervention required, no possibility of ignoring a passed proposal. Most mature protocols use both: Snapshot for signaling and community temperature checks, on-chain Governor contracts for binding execution.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            Do I need a DAO from the beginning of my project?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>Not necessarily. Most projects launch with centralized control and transition to formal on-chain governance as their community and trading volume grow. We build governance systems with a staged rollout path — starting with Gnosis Safe multi-sig controls, adding Snapshot off-chain voting as the community develops, and transitioning to full on-chain Governor execution at the appropriate milestone. The transition is planned from the start, not retrofitted later.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            How do you prevent governance attacks like flash loan voting manipulation?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>We implement voting snapshot blocks — governance weight is measured at a fixed block number before the proposal creation or voting period, not at the time of voting. This prevents an attacker from flash-borrowing large token positions to manipulate a vote outcome and returning them in the same transaction. We also implement minimum proposal thresholds that prevent spam proposals and simulate multiple attack vectors on testnet before mainnet deployment.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            Can governance smart contracts be upgraded after deployment?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>Yes, if built with an upgrade path from the start. We implement upgradeable Governor contracts using OpenZeppelin's proxy patterns for projects that need the ability to improve governance parameters post-deployment. For projects that want maximum decentralization credibility, we also build fully immutable governance that cannot be altered by any party — including the founding team — after deployment.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            What blockchain networks do you build DAO governance on?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>Ethereum, Polygon, BNB Chain, Arbitrum, and Avalanche. Ethereum provides the strongest governance credibility signal for institutional audiences. Polygon and Arbitrum offer significantly lower gas costs for communities with high voting participation rates. We recommend the right network based on your community profile, target listing platforms, and governance participation expectations.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            What legal structure does a DAO need?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>Operating without a legal wrapper creates personal liability exposure for DAO contributors and core team members in most jurisdictions. We advise on Wyoming DAO LLC, Marshall Islands DAO, and other recognized legal frameworks as part of the governance setup engagement. We work alongside your legal counsel to ensure the on-chain structure and legal structure are aligned — not in conflict.</p>
+          </div>
+        </div>
+
+        <div class="dao-faq-item">
+          <button class="dao-faq-q" onclick="toggleFaq(this)">
+            How long does DAO governance development take?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="dao-faq-a">
+            <p>A standard governance system — Governor contract, timelock, treasury, and voting integration — takes 3–6 weeks including security review and testnet simulation. A full governance dashboard with custom voting UI adds 2–4 weeks. Complex multi-layer governance with veto councils and custom proposal logic is scoped individually after the governance architecture design session.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA
+  ══════════════════════════════════════ -->
+  <section class="dao-cta">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--primary); margin-bottom:12px;">Get Started</div>
+      <h2 data-aos="fade-up">Give Your Community Governance That Is Real — Not a Roadmap Item</h2>
+      <p data-aos="fade-up" data-aos-delay="80">Real decentralization is not a promise on a website. It is a deployed Governor contract with a timelock, a Gnosis Safe replacing admin keys, and a treasury your community can audit on-chain right now.</p>
+      <p class="dao-cta-sub" data-aos="fade-up" data-aos-delay="120">We build the infrastructure that lets you say it and prove it at the same time.</p>
+      <div class="dao-cta-btns" data-aos="fade-up" data-aos-delay="160">
+        <a href="../book.html" class="btn"><span>Book a Free Governance Architecture Consultation</span></a>
+        <a href="../pricing.html" class="btn btn-outline"><span>View Pricing</span></a>
+      </div>
+      <p style="margin-top:40px; font-size:12px; color:rgba(255,255,255,.35); letter-spacing:.5px;">
+        Blockchains Specialist &nbsp;·&nbsp; DAO Development &nbsp;·&nbsp; On-Chain Governance Smart Contracts &nbsp;·&nbsp; Treasury Management &nbsp;·&nbsp; Token Voting Systems &nbsp;·&nbsp; Snapshot Integration &nbsp;·&nbsp; Timelock &amp; Multi-Sig &nbsp;·&nbsp; Gnosis Safe &nbsp;·&nbsp; Ethereum · Polygon · BNB Chain · Arbitrum
+      </p>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRKTXX1GYL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-WRKTXX1GYL');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.dao-faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.dao-faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+
+</html>

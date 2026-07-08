@@ -842,7 +842,7 @@
           <p class="scd-hero-lead">Smart contracts are immutable by default. Once deployed, flawed logic doesn't just sit there — it waits to be exploited. A single reentrancy gap, an unchecked access control, or an integer overflow can drain user funds in minutes, permanently.</p>
           <p class="scd-hero-emphasis">That is why every engagement at Blockchains Specialist starts with an architecture review, not a code sprint.</p>
           <p class="scd-hero-lead">We are a dedicated smart contract development company with 8+ years of hands-on Solidity and Rust experience across Ethereum, BNB Chain, Solana, Polygon, Arbitrum, and more. Our contracts are scoped, written, tested, and security-reviewed from scratch on every project. No boilerplates. No name swaps. No shortcuts.</p>
-          <a href="../book.html" class="btn" style="margin-top:8px;"><span>Book a Free Technical Consultation</span></a>
+          <a href="../book.html" class="btn btn-outline" style="margin-top:8px;"><span>Book a Free Technical Consultation</span></a>
           <div class="scd-hero-stats">
             <div class="scd-hero-stat">
               <strong>8+</strong>
@@ -1072,69 +1072,111 @@
         <p style="color:rgba(255,255,255,.7);">Seven disciplined stages from scope to mainnet — no shortcuts, no handoff gaps.</p>
       </div>
 
-      <div class="scd-process-wrap">
+      <div class="ptl-timeline" data-aos="fade-up">
+        <div class="ptl-axis" aria-hidden="true"></div>
 
-        <!-- Row A: Steps 1-2-3 (left to right) -->
-        <div class="scd-proc-row scd-proc-row--3" data-aos="fade-up">
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-phone-volume"></i></div>
-            <div class="scd-step-num">Step 01</div>
-            <h3>Technical Scoping Call</h3>
-            <p>We review your use case, architecture requirements, and security constraints before a single line of code is written. Scope is locked before work begins.</p>
-          </div>
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-sitemap"></i></div>
-            <div class="scd-step-num">Step 02</div>
-            <h3>Contract Architecture & Design</h3>
-            <p>System design, contract interaction maps, and upgrade strategy defined and documented. You approve the architecture before development starts.</p>
-          </div>
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-terminal"></i></div>
-            <div class="scd-step-num">Step 03</div>
-            <h3>Development & Unit Testing</h3>
-            <p>Contracts written in Solidity or Rust depending on chain. Every function is covered by unit tests using Hardhat or Foundry. No untested logic enters review.</p>
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 01"><div class="ptl-ring"></div><div class="ptl-dot">01</div></div>
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 01</span>
+              <div class="ptl-card-icon"><i class="fas fa-phone-volume"></i></div>
+              <h3>Technical Scoping Call</h3>
+              <p>We review your use case, architecture requirements, and security constraints before a single line of code is written. Scope is locked before work begins.</p>
+              <span class="ptl-card-num" aria-hidden="true">01</span>
+            </div>
           </div>
         </div>
 
-        <!-- Connector A→B: right U-bend, curves around right edge into Row B -->
-        <div class="scd-snake-connector" aria-hidden="true">
-          <div class="scd-bend--right"></div>
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 02</span>
+              <div class="ptl-card-icon"><i class="fas fa-sitemap"></i></div>
+              <h3>Contract Architecture &amp; Design</h3>
+              <p>System design, contract interaction maps, and upgrade strategy defined and documented. You approve the architecture before development starts.</p>
+              <span class="ptl-card-num" aria-hidden="true">02</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 02"><div class="ptl-ring"></div><div class="ptl-dot">02</div></div>
+          <div class="ptl-gap"></div>
         </div>
 
-        <!-- Row B: Steps 4-5 (right side, right to left) -->
-        <div class="scd-proc-row scd-proc-row--2c right" data-aos="fade-up">
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-search"></i></div>
-            <div class="scd-step-num">Step 04</div>
-            <h3>Internal Security Review</h3>
-            <p>Full internal audit against our security checklist. Identified issues remediated before the contract reaches your team or any external auditor.</p>
-          </div>
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-flask"></i></div>
-            <div class="scd-step-num">Step 05</div>
-            <h3>Testnet Deployment & Client Review</h3>
-            <p>Full testnet deployment with transaction evidence. Client review period before mainnet is approved.</p>
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 03"><div class="ptl-ring"></div><div class="ptl-dot">03</div></div>
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 03</span>
+              <div class="ptl-card-icon"><i class="fas fa-terminal"></i></div>
+              <h3>Development &amp; Unit Testing</h3>
+              <p>Contracts written in Solidity or Rust depending on chain. Every function is covered by unit tests using Hardhat or Foundry. No untested logic enters review.</p>
+              <span class="ptl-card-num" aria-hidden="true">03</span>
+            </div>
           </div>
         </div>
 
-        <!-- Connector B→C: left U-bend, curves around left edge into Row C -->
-        <div class="scd-snake-connector" aria-hidden="true">
-          <div class="scd-bend--left"></div>
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 04</span>
+              <div class="ptl-card-icon"><i class="fas fa-magnifying-glass"></i></div>
+              <h3>Internal Security Review</h3>
+              <p>Full internal audit against our security checklist. Identified issues remediated before the contract reaches your team or any external auditor.</p>
+              <span class="ptl-card-num" aria-hidden="true">04</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 04"><div class="ptl-ring"></div><div class="ptl-dot">04</div></div>
+          <div class="ptl-gap"></div>
         </div>
 
-        <!-- Row C: Steps 6-7 (left side, left to right) -->
-        <div class="scd-proc-row scd-proc-row--2c left" data-aos="fade-up">
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-certificate"></i></div>
-            <div class="scd-step-num">Step 06</div>
-            <h3>Third-Party Audit (If Required)</h3>
-            <p>For DeFi protocols, token launches, and projects handling user funds, we coordinate with CertiK, SlowMist, or OpenZeppelin. We manage the communication and remediation cycle.</p>
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 05"><div class="ptl-ring"></div><div class="ptl-dot">05</div></div>
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 05</span>
+              <div class="ptl-card-icon"><i class="fas fa-flask"></i></div>
+              <h3>Testnet Deployment &amp; Client Review</h3>
+              <p>Full testnet deployment with transaction evidence. Client review period before mainnet is approved.</p>
+              <span class="ptl-card-num" aria-hidden="true">05</span>
+            </div>
           </div>
-          <div class="scd-step-card">
-            <div class="scd-step-icon"><i class="fas fa-rocket"></i></div>
-            <div class="scd-step-num">Step 07</div>
-            <h3>Mainnet Deployment & Verification</h3>
-            <p>Final deployment to mainnet with Etherscan source verification, ABI delivery, and deployment documentation. Ongoing support available post-launch.</p>
+        </div>
+
+        <div class="ptl-item ptl-item--l">
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 06</span>
+              <div class="ptl-card-icon"><i class="fas fa-certificate"></i></div>
+              <h3>Third-Party Audit (If Required)</h3>
+              <p>For DeFi protocols, token launches, and projects handling user funds, we coordinate with CertiK, SlowMist, or OpenZeppelin. We manage the communication and remediation cycle.</p>
+              <span class="ptl-card-num" aria-hidden="true">06</span>
+            </div>
+          </div>
+          <div class="ptl-pivot" data-label="Step 06"><div class="ptl-ring"></div><div class="ptl-dot">06</div></div>
+          <div class="ptl-gap"></div>
+        </div>
+
+        <div class="ptl-item ptl-item--r">
+          <div class="ptl-gap"></div>
+          <div class="ptl-pivot" data-label="Step 07"><div class="ptl-ring"></div><div class="ptl-dot">07</div></div>
+          <div class="ptl-body">
+            <div class="ptl-connector"></div>
+            <div class="ptl-card">
+              <span class="ptl-card-badge">Step 07</span>
+              <div class="ptl-card-icon"><i class="fas fa-rocket"></i></div>
+              <h3>Mainnet Deployment &amp; Verification</h3>
+              <p>Final deployment to mainnet with Etherscan source verification, ABI delivery, and deployment documentation. Ongoing support available post-launch.</p>
+              <span class="ptl-card-num" aria-hidden="true">07</span>
+            </div>
           </div>
         </div>
 
