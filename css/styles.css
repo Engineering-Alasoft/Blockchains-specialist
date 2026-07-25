@@ -2208,3 +2208,121 @@
         font-size: 24px;
       }
     }
+
+/* ============================================================
+   SITE MODAL (alerts / errors)
+   ============================================================ */
+.site-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.site-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.site-modal__card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  padding: 36px 32px 28px;
+  text-align: center;
+  transform: translateY(12px) scale(0.98);
+  transition: transform .25s ease;
+}
+
+.site-modal.open .site-modal__card {
+  transform: translateY(0) scale(1);
+}
+
+.site-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 16px;
+  transition: color .2s ease;
+}
+
+.site-modal__close:hover {
+  color: var(--primary);
+}
+
+.site-modal__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.site-modal--error .site-modal__icon,
+.site-modal--warning .site-modal__icon {
+  background: rgba(239, 35, 60, 0.1);
+  color: var(--primary);
+}
+
+.site-modal--success .site-modal__icon {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.site-modal--info .site-modal__icon {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.site-modal__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading);
+}
+
+.site-modal__message {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.site-modal__btn {
+  min-width: 120px;
+}
+
+@media (max-width: 480px) {
+  .site-modal__card {
+    padding: 32px 22px 24px;
+  }
+
+  .site-modal__title {
+    font-size: 16px;
+  }
+}

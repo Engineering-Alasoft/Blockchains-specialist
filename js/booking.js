@@ -131,8 +131,14 @@ function selectTime(label, h, m) {
 }
 
 function goStep(n) {
-  if (n === 2 && !booking.meetingType) { alert('Please select a meeting type.'); return; }
-  if (n === 3 && (!booking.selectedDate || !booking.selectedTime)) { alert('Please select a date and time.'); return; }
+  if (n === 2 && !booking.meetingType) {
+    showSiteAlert('Please select a meeting type before continuing.', { title: 'Meeting type required', type: 'warning' });
+    return;
+  }
+  if (n === 3 && (!booking.selectedDate || !booking.selectedTime)) {
+    showSiteAlert('Please select a date and time before continuing.', { title: 'Date & time required', type: 'warning' });
+    return;
+  }
   if (n === 4) updateSummary();
   booking.step = n;
   updateStepUI();
@@ -160,45 +166,95 @@ function updateSummary() {
   `;
 }
 
-function confirmBooking() {
+async function confirmBooking() {
   const name = document.getElementById('bname')?.value.trim();
   const email = document.getElementById('bemail')?.value.trim();
   const phone = document.getElementById('bphone')?.value.trim();
   const notes = document.getElementById('bnotes')?.value.trim() || '';
 
   if (!name || !email || !phone) {
-    alert('Please enter your name, email, and phone.');
+    showSiteAlert('Please enter your name, email, and phone number.', { title: 'Missing details', type: 'warning' });
     return;
   }
 
   const dateStr = booking.selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   const key = booking.selectedDate.toDateString() + '-' + booking.selectedHour + '-' + booking.selectedMin;
-  localStorage.setItem('bs-booked-' + key, '1');
 
-  const msg = [
-    'New meeting booking — BlockchainsSpecialist',
-    '',
+  const message = [
     'Meeting: ' + booking.meetingLabel,
     'Date: ' + dateStr,
     'Time: ' + booking.selectedTime,
     '',
-    'Name: ' + name,
-    'Email: ' + email,
-    'Phone: ' + phone,
-    notes ? 'Notes: ' + notes : ''
+    'Phone / WhatsApp: ' + phone,
+    notes ? 'Project Notes: ' + notes : ''
   ].filter(Boolean).join('\n');
 
-  document.querySelector('.booking-wrap').style.display = 'none';
-  const success = document.getElementById('bookingSuccess');
-  success.style.display = 'block';
-  document.getElementById('successDetails').textContent = booking.meetingLabel + ' on ' + dateStr + ' at ' + booking.selectedTime;
+  const confirmBtn = document.querySelector('.booking-panel[data-panel="4"] .booking-nav .btn:last-child');
+  const originalBtnHtml = confirmBtn?.innerHTML;
+  if (confirmBtn) {
+    confirmBtn.disabled = true;
+    confirmBtn.innerHTML = '<span>Sending...</span>';
+  }
 
-  const wa = 'https://wa.me/' + SITE.whatsapp + '?text=' + encodeURIComponent(msg);
-  document.getElementById('whatsappConfirm').href = wa;
+  try {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', 'Meeting Booking - ' + booking.meetingLabel);
+    formData.append('message', message);
 
-  const mailBtn = document.getElementById('emailConfirm');
-  if (mailBtn) {
-    mailBtn.href = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent('Meeting Booking — ' + booking.meetingLabel) + '&body=' + encodeURIComponent(msg);
+    const mailUrl = new URL('mail/contact.php', window.location.href).href;
+    const res = await fetch(mailUrl, {
+      method: 'POST',
+      body: formData
+    });
+
+    let result = {};
+    try {
+      result = await res.json();
+    } catch (parseErr) {
+      throw new Error('Invalid server response');
+    }
+
+    if (!res.ok || !result.ok) {
+      throw new Error(result.error || 'Send failed');
+    }
+
+    localStorage.setItem('bs-booked-' + key, '1');
+
+    document.querySelector('.booking-wrap').style.display = 'none';
+    const success = document.getElementById('bookingSuccess');
+    success.style.display = 'block';
+    document.getElementById('successDetails').textContent = booking.meetingLabel + ' on ' + dateStr + ' at ' + booking.selectedTime;
+
+    const waMsg = [
+      'New meeting booking — BlockchainsSpecialist',
+      '',
+      'Meeting: ' + booking.meetingLabel,
+      'Date: ' + dateStr,
+      'Time: ' + booking.selectedTime,
+      '',
+      'Name: ' + name,
+      'Email: ' + email,
+      'Phone: ' + phone,
+      notes ? 'Notes: ' + notes : ''
+    ].filter(Boolean).join('\n');
+
+    document.getElementById('whatsappConfirm').href = 'https://wa.me/' + SITE.whatsapp + '?text=' + encodeURIComponent(waMsg);
+  } catch (err) {
+    let errorText = 'Could not send your booking. Please try again or contact us on WhatsApp.';
+    if (err.message === 'Invalid server response') {
+      errorText = 'The booking form is not set up on the server yet. Upload the mail/contact.php file to your hosting, then try again.';
+    } else if (err.message && err.message !== 'Send failed') {
+      errorText = err.message;
+    }
+    showSiteAlert(errorText, { title: 'Booking failed', type: 'error' });
+    console.error('Booking send failed:', err);
+  } finally {
+    if (confirmBtn) {
+      confirmBtn.disabled = false;
+      confirmBtn.innerHTML = originalBtnHtml;
+    }
   }
 }
 
