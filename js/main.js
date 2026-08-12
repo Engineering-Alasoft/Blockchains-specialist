@@ -95,25 +95,12 @@ if (document.readyState === 'complete') {
 }
 
 const navbar = document.getElementById('navbar');
-const backTop = document.getElementById('back-top');
 
-if (navbar) {
-  const isLight = navbar.classList.contains('navbar--light');
+if (navbar && !navbar.classList.contains('navbar--light')) {
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (isLight) {
-      if (backTop) backTop.style.display = y > 200 ? 'flex' : 'none';
-      return;
-    }
-    if (y > 80) {
-      navbar.classList.add('scrolled');
-      if (backTop) backTop.style.display = 'flex';
-    } else {
-      navbar.classList.remove('scrolled');
-      if (backTop) backTop.style.display = 'none';
-    }
+    if (window.scrollY > 80) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
   }, { passive: true });
-  if (backTop) backTop.style.display = 'none';
 }
 
 function openMenu() {
@@ -154,18 +141,10 @@ function submitForm() {
   document.getElementById('formSuccess').style.display = 'block';
 }
 
-function subscribeNL() {
-  const el = document.getElementById('nlEmail');
-  if (!el?.value.trim()) return;
-  el.value = '';
-  el.placeholder = 'Subscribed!';
-  setTimeout(() => { el.placeholder = 'your@email.com'; }, 3000);
-}
-
 function filterPortfolio(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.portfolio-card, .coin-item').forEach(c => {
+  document.querySelectorAll('.coin-item').forEach(c => {
     const cats = (c.dataset.cat || '').split(' ');
     const show = cat === 'all' || cats.includes(cat);
     c.style.display = show ? 'block' : 'none';

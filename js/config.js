@@ -4,7 +4,6 @@ const SITE = {
   address: 'Bayel Street, Baku, Azerbaijan',
   whatsapp: '923322449159',
   whatsappDisplay: '+92 332-244915-9',
-  telegram: '@blockchainsspecialist',
   timezone: 'UTC',
   booking: {
     daysAhead: 30,
