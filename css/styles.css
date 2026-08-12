@@ -1055,37 +1055,6 @@
     }
 
     /* ============================================================
-   PORTFOLIO FILTER
-   ============================================================ */
-    .portfolio-filter {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 45px;
-    }
-
-    .filter-btn {
-      padding: 8px 20px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 2px solid rgba(0, 0, 0, .12);
-      background: none;
-      cursor: pointer;
-      color: var(--text);
-      transition: ease-out .3s;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: var(--white);
-    }
-
-    /* ============================================================
    PROCESS
    ============================================================ */
     .process {

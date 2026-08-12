@@ -10,16 +10,12 @@ if (typeof AOS !== 'undefined') {
 
 const SITE_MODAL_ICONS = {
   error: 'fa-circle-exclamation',
-  warning: 'fa-triangle-exclamation',
-  success: 'fa-circle-check',
-  info: 'fa-circle-info'
+  warning: 'fa-triangle-exclamation'
 };
 
 const SITE_MODAL_TITLES = {
   error: 'Something went wrong',
-  warning: 'Please check',
-  success: 'Success',
-  info: 'Notice'
+  warning: 'Please check'
 };
 
 function ensureSiteModal() {
@@ -89,18 +85,8 @@ if (document.readyState === 'complete') {
   requestAnimationFrame(hideLoaderAndStartHome);
 } else {
   window.addEventListener('load', () => {
-    // Short fade only — no artificial 1.2s wait on mobile
     setTimeout(hideLoaderAndStartHome, 180);
   });
-}
-
-const navbar = document.getElementById('navbar');
-
-if (navbar && !navbar.classList.contains('navbar--light')) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  }, { passive: true });
 }
 
 function openMenu() {
@@ -140,32 +126,3 @@ function submitForm() {
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
-
-function filterPortfolio(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.coin-item').forEach(c => {
-    const cats = (c.dataset.cat || '').split(' ');
-    const show = cat === 'all' || cats.includes(cat);
-    c.style.display = show ? 'block' : 'none';
-    if (show) {
-      c.style.opacity = '0';
-      c.style.transform = 'scale(.95)';
-      setTimeout(() => {
-        c.style.transition = '.35s ease';
-        c.style.opacity = '1';
-        c.style.transform = 'scale(1)';
-      }, 40);
-    }
-  });
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
-    }
-  });
-});

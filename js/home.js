@@ -136,7 +136,7 @@ if (canvas) {
 }
 
 const WORDS = ['Startups In US', 'Web3 Businesses', 'Innovators & Businesses', 'Blockchain-Powered Businesses', 'Tokenized Business Models'];
-let wi = 0, ci = 0, deleting = false, typedEl, typedTimer;
+let wi = 0, ci = 0, deleting = false, typedEl;
 
 function startTyped() {
   typedEl = document.getElementById('typed-container');
@@ -153,13 +153,13 @@ function typeLoop() {
   if (!deleting) {
     ci++;
     typedEl.innerHTML = word.slice(0, ci) + '<span class="typed-cursor">|</span>';
-    if (ci === word.length) { deleting = true; typedTimer = setTimeout(typeLoop, 1800); return; }
+    if (ci === word.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
   } else {
     ci--;
     typedEl.innerHTML = word.slice(0, ci) + '<span class="typed-cursor">|</span>';
     if (ci === 0) { deleting = false; wi = (wi + 1) % WORDS.length; }
   }
-  typedTimer = setTimeout(typeLoop, deleting ? 55 : 105);
+  setTimeout(typeLoop, deleting ? 55 : 105);
 }
 
 function startCounters() {
