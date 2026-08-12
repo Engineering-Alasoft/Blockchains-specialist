@@ -1,4 +1,12 @@
-AOS.init({ duration: 600, once: true, offset: 60, easing: 'ease-out' });
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 500,
+    once: true,
+    offset: 40,
+    easing: 'ease-out',
+    disable: () => window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches
+  });
+}
 
 const SITE_MODAL_ICONS = {
   error: 'fa-circle-exclamation',
@@ -70,14 +78,21 @@ function showSiteAlert(message, options = {}) {
   });
 }
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    if (loader) loader.classList.add('hidden');
-    if (typeof startCounters === 'function') startCounters();
-    if (typeof startTyped === 'function') startTyped();
-  }, 1200);
-});
+function hideLoaderAndStartHome() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
+  if (typeof startCounters === 'function') startCounters();
+  if (typeof startTyped === 'function') startTyped();
+}
+
+if (document.readyState === 'complete') {
+  requestAnimationFrame(hideLoaderAndStartHome);
+} else {
+  window.addEventListener('load', () => {
+    // Short fade only — no artificial 1.2s wait on mobile
+    setTimeout(hideLoaderAndStartHome, 180);
+  });
+}
 
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('back-top');

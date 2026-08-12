@@ -38,10 +38,16 @@
   <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
   <link rel="manifest" href="images/favicons/site.webmanifest">
   <meta name="theme-color" content="#EF233C">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/pages.css">
   <meta name="msvalidate.01" content="1667E03F732FCB819033FB5023327FED" />
@@ -488,7 +494,7 @@
       </div>
       <div class="coin-portfolio-grid">
         <article class="coin-item" data-aos="fade-up">
-          <div class="coin-item-img"><img src="images/coin images/Tic.png" alt="Tourism Coin (TIC)" loading="lazy">
+          <div class="coin-item-img"><img src="images/coin images/Tic.png" alt="Tourism Coin (TIC)" width="170" height="170" loading="lazy" decoding="async">
           </div>
           <div class="coin-item-footer">
             <h3>Tourism Coin<span>(TIC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
@@ -496,32 +502,32 @@
         </article>
         <article class="coin-item" data-aos="fade-up" data-aos-delay="50">
           <div class="coin-item-img"><img src="images/coin images/qtc.png" alt="Quick Transfer Coin (QTC)"
-              loading="lazy"></div>
+              width="170" height="170" loading="lazy" decoding="async"></div>
           <div class="coin-item-footer">
             <h3>Quick Transfer Coin<span>(QTC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
           </div>
         </article>
         <article class="coin-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="coin-item-img"><img src="images/coin images/zenc.png" alt="ZENC Coin (ZENC)" loading="lazy"></div>
+          <div class="coin-item-img"><img src="images/coin images/zenc.png" alt="ZENC Coin (ZENC)" width="170" height="170" loading="lazy" decoding="async"></div>
           <div class="coin-item-footer">
             <h3>ZENC Coin<span>(ZENC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
           </div>
         </article>
         <article class="coin-item" data-aos="fade-up" data-aos-delay="150">
           <div class="coin-item-img"><img src="images/coin images/fpc-coin.png" alt="Fall Protection (FPC)"
-              loading="lazy"></div>
+              width="170" height="170" loading="lazy" decoding="async"></div>
           <div class="coin-item-footer">
             <h3>Fall Protection<span>(FPC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
           </div>
         </article>
         <article class="coin-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="coin-item-img"><img src="images/coin images/GWSC.png" alt="GSWC Coin (GSWC)" loading="lazy"></div>
+          <div class="coin-item-img"><img src="images/coin images/GWSC.png" alt="GSWC Coin (GSWC)" width="170" height="170" loading="lazy" decoding="async"></div>
           <div class="coin-item-footer">
             <h3>GSWC Coin<span>(GSWC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
           </div>
         </article>
         <article class="coin-item" data-aos="fade-up" data-aos-delay="250">
-          <div class="coin-item-img"><img src="images/coin images/TDLC.png" alt="Davis Legacy (TDLC)" loading="lazy">
+          <div class="coin-item-img"><img src="images/coin images/TDLC.png" alt="Davis Legacy (TDLC)" width="170" height="170" loading="lazy" decoding="async">
           </div>
           <div class="coin-item-footer">
             <h3>Davis Legacy<span>(TDLC)</span></h3><a href="portfolio.html" class="coin-item-plus">+</a>
@@ -787,14 +793,13 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-WRKTXX1GYL');
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/config.js"></script>
-  <script src="js/footer.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/footer.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/home.js"></script>
 </body>
 
 </html>

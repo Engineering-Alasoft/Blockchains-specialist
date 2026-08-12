@@ -138,7 +138,7 @@
       height: 100%;
       width: 0%;
       background: var(--white);
-      animation: loaderFill 1.6s ease forwards;
+      animation: loaderFill .45s ease forwards;
     }
 
     @keyframes loaderFill {
@@ -454,12 +454,18 @@
     }
 
     #particles {
-      position: fixed;
+      position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       z-index: 0;
       pointer-events: none;
+    }
+
+    @media (max-width: 900px), (prefers-reduced-motion: reduce) {
+      #particles {
+        display: none !important;
+      }
     }
 
     /* Lightweight grid overlay — CSS only, no JS */
@@ -721,6 +727,14 @@
 
       50% {
         box-shadow: 0 10px 26px rgba(255, 255, 255, .22);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chain-box::before,
+      .chain-box::after,
+      .orbit-icon {
+        animation: none !important;
       }
     }
 
