@@ -1428,20 +1428,32 @@
       box-shadow: var(--shadow-card);
     }
 
+    .blog-card-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
     .blog-img-wrap {
       height: 195px;
       overflow: hidden;
       position: relative;
+      background: #1a0a0a;
     }
 
     .blog-thumb {
       width: 100%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
+      overflow: hidden;
       transition: transform ease-out .4s;
+    }
+
+    .blog-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .blog-card:hover .blog-thumb {

@@ -12,11 +12,6 @@
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services.html</loc>
-	<lastmod>2026-07-25T09:38:51+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
 	<loc>https://blockchainsspecialist.com/pricing.html</loc>
 	<lastmod>2026-07-25T09:38:51+01:00</lastmod>
 	<priority>1.0</priority>
@@ -42,48 +37,53 @@
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/smart-contract-development.html</loc>
+	<loc>https://blockchainsspecialist.com/smart-contract-development.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/token-development-services.html</loc>
+	<loc>https://blockchainsspecialist.com/token-development-services.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/nft-smart-contract-development.html</loc>
+	<loc>https://blockchainsspecialist.com/nft-smart-contract-development.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/web3-development-services.html</loc>
+	<loc>https://blockchainsspecialist.com/web3-development-services.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/coinmarketcap-coingecko-listing.html</loc>
+	<loc>https://blockchainsspecialist.com/coinmarketcap-coingecko-listing.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/dao-governance-development.html</loc>
+	<loc>https://blockchainsspecialist.com/dao-governance-development.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/cex-exchange-listing.html</loc>
+	<loc>https://blockchainsspecialist.com/cex-exchange-listing.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/ico-development-tokenomics-consulting.html</loc>
+	<loc>https://blockchainsspecialist.com/ico-development-tokenomics-consulting.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://blockchainsspecialist.com/services/crypto-coin-development.html</loc>
+	<loc>https://blockchainsspecialist.com/crypto-coin-development.html</loc>
 	<lastmod>2026-07-25T09:38:56+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://blockchainsspecialist.com/blog/crypto-token-development-checklist-15-steps-before-launching-your-token.html</loc>
+	<lastmod>2026-08-10T20:14:00+05:00</lastmod>
 	<priority>0.8</priority>
 </url>
 </urlset>

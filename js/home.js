@@ -72,7 +72,9 @@ if (canvas) {
   requestAnimationFrame(drawParticles);
 }
 
-const WORDS = ['Solutions.', 'Innovation.', 'Excellence.', 'Results.', 'Success.'];
+// const WORDS = ['Solutions.', 'Innovation.', 'Excellence.', 'Results.', 'Services for Startups In US'];
+const WORDS = ['Startups In US','Web3 Businesses', 'Innovators & Businesses', 'Blockchain-Powered Businesses', 'Tokenized Business Models'];
+// const WORDS = ['Services for Startups In US'];
 let wi = 0, ci = 0, deleting = false, typedEl;
 
 function startTyped() {
