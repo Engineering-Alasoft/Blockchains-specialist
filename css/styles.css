@@ -56,6 +56,14 @@
       font-size: 16px;
       font-weight: 400;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #site-footer {
+      margin-top: auto;
+      width: 100%;
     }
 
     h1,
@@ -1652,6 +1660,10 @@
     .footer {
       background: var(--primary);
       padding-top: 80px;
+    }
+
+    .footer.footer-simple {
+      padding: 42px 0 36px;
     }
 
     .footer-grid {

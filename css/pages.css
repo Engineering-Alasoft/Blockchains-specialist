@@ -652,6 +652,7 @@
 .footer-simple {
   padding: 42px 0 36px;
   background: var(--primary);
+  margin: 0;
 }
 
 .footer-simple-inner {
