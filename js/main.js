@@ -101,7 +101,7 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-function submitForm() {
+async function submitForm() {
   const fname = document.getElementById('fname');
   const femail = document.getElementById('femail');
   const fservice = document.getElementById('fservice');
@@ -110,19 +110,64 @@ function submitForm() {
     showSiteAlert('Please fill in all required fields.', { title: 'Missing information', type: 'warning' });
     return;
   }
+
   const budget = document.getElementById('fbudget')?.value || 'Not specified';
-  const body = [
-    'New inquiry from BlockchainsSpecialist website',
-    '',
-    'Name: ' + fname.value.trim(),
-    'Email: ' + femail.value.trim(),
-    'Service: ' + fservice.value,
+  const name = fname.value.trim();
+  const email = femail.value.trim();
+  const service = fservice.value;
+  const message = [
+    'Service: ' + service,
     'Budget: ' + budget,
     '',
     fmessage.value.trim()
   ].join('\n');
 
-  window.location.href = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent('Project Inquiry — ' + fservice.value) + '&body=' + encodeURIComponent(body);
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const submitBtn = document.querySelector('#contactForm .form-submit .btn');
+  const originalBtnHtml = submitBtn?.innerHTML;
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Sending...</span>';
+  }
+
+  try {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', 'Contact Form - ' + service);
+    formData.append('message', message);
+
+    const mailUrl = new URL('mail/contact.php', window.location.href).href;
+    const res = await fetch(mailUrl, {
+      method: 'POST',
+      body: formData
+    });
+
+    let result = {};
+    try {
+      result = await res.json();
+    } catch (parseErr) {
+      throw new Error('Invalid server response');
+    }
+
+    if (!res.ok || !result.ok) {
+      throw new Error(result.error || 'Send failed');
+    }
+
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch (err) {
+    let errorText = 'Could not send your message. Please try again or contact us on WhatsApp.';
+    if (err.message === 'Invalid server response') {
+      errorText = 'The contact form is not set up on the server yet. Upload the mail/contact.php file to your hosting, then try again.';
+    } else if (err.message && err.message !== 'Send failed') {
+      errorText = err.message;
+    }
+    showSiteAlert(errorText, { title: 'Message failed', type: 'error' });
+    console.error('Contact send failed:', err);
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+    }
+  }
 }
